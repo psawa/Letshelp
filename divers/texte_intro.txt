@@ -1,0 +1,21 @@
+<div class="intro">
+	<p class="question">Mais qu'est ce que c'est que ça ? En plus, un nom en anglais..</p>
+
+	<p class ="reponse"><span style="font-family: 'Boogaloo', cursive;">LH</span> est un site d'entraide qui a pour but de court-circuiter le capitalisme.<br/>
+	Hélas c'est un peu ambitieux, alors pour l'instant nous dirons simplement que c'est un site qui permet de rendre et recevoir des services sans utiliser d'argent.<br/>
+	On peut séparer ces services en deux catégories : les services dits "cassiques", et les excuses. Ces dernières font la particularité de ce site. </p>
+
+	<p class="question">Sans argent ? </p>
+
+	<p class="reponse">Sans argent. Nous proposons un système de points à gagner lorsque qu'un service est rendu. Le service est considéré comme rendu quand le receveur confirme que le service est rendu.</p><br/>
+	
+	<p class="question">Qu'est ce que ça apporte d'utiliser des points plutot que de l'argent ?</p>
+
+	<p class="reponse">Plusieurs choses...
+		<ul>
+			<li>Pour tout service rendu, le nombre de points est calculé en fonction du temps de travail. 1h de travail = 10 points.</li>
+			<li>C'est une manière de contester le système financier qui oppresse les personnes les plus démunies.</li>
+		</ul>
+	</p>
+	<br/>
+</div>
