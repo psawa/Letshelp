@@ -54,7 +54,7 @@
 						if(isset($donnees['menu']) AND $donnees['menu']=='poster_annonce'){
 							echo "<li class='selected'>Poster une annonce</li>"; 
 						}
-						else{ echo "<a href='poster_annonce.php'><li>Poster une annonce</li></a>";
+						else{ echo "<a href='poster_annonce1.php'><li>Poster une annonce</li></a>";
 						}
 						
 						if(isset($donnees['menu']) AND $donnees['menu']=='voir_annonces'){
