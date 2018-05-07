@@ -11,12 +11,14 @@ include 'entete.php'; ?>
 	// récupérer tous les enregistrements dans un tableau 
 	$enregistrements = $reponse->fetchAll(); 
 ?>
-
-<?php 
-for ($i=0; $i < count($enregistrements) ; $i++) { 
-	echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.$enregistrements[$i]['titre'].'</a>, '.$enregistrements[$i]['pseudo'].'<br/>';
-}
-?>
-
+<div class="toutelesannonces">
+	<?php 
+	for ($i=0; $i < count($enregistrements) ; $i++) { 
+		echo '<div class="annonces">';
+		echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.$enregistrements[$i]['titre'].'</a>, '.$enregistrements[$i]['pseudo'].'<br/>';
+		echo '</div>';
+	}
+	?>
+</div>
 
 <?php include 'pied.php'; ?>
