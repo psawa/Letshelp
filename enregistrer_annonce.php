@@ -4,7 +4,7 @@ $donnees['titre_page']='';
 include 'entete.php'; ?>
 
 <?php 
-if(isset($_POST['titre']) && $_POST['titre']!='' && isset($_POST['description']) && $_POST['description']!='' && isset( $_POST['categorie']) && $_POST['categorie']!='' && isset($_POST['ville']) && $_POST['ville']!='') && isset($_POST['type']) && $_POST['type']!=''){
+if(isset($_POST['titre']) && $_POST['titre']!='' && isset($_POST['description']) && $_POST['description']!='' && isset( $_POST['categorie']) && $_POST['categorie']!='' && isset($_POST['ville']) && $_POST['ville']!='' && isset($_POST['type']) && $_POST['type']!=''){
 	$titre=$_POST['titre'];
 	$description=$_POST['description'];
 	$id_categorie=$_POST['categorie'];
