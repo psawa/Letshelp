@@ -32,7 +32,7 @@ include 'entete.php'; ?>
 		</select> <br/><br/>
 		<label>departement</label>
 		<select name="departement">
-			<option  value="" selected disabled hidden>Ta région</option>
+			<option  value="" selected disabled hidden>Ton département</option>
 			<?php 
 				for($i=0; $i < count($enregistrements_departement) ; $i++){
 					echo '<option value="'.$enregistrements_departement[$i]['id'].'">'.$enregistrements_departement[$i]['id'].' - '.$enregistrements_departement[$i]['nom'].'</option>';
