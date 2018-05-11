@@ -14,8 +14,6 @@ include 'entete.php'; ?>
 		<input type="password" name="motdepasse" id="motdepasse"> <br>
 		<label for="email">Email : </label>
 		<input type="email" name="email" id="email"> <br>
-		<labelfor="avatar">Avatar : </label>
-		<input type="file" name="avatar" id="avatar"/> <br><br>
 		<input type="submit" name="S\'inscrire">
 	</form>
 </div>

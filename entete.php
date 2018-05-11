@@ -36,8 +36,8 @@
 							</ul>
 					<?php else: ?>
 						
-							<a href="inscription.php" class="bouton_inscription">Inscription</a> <br/>
-							<a href="connexion.php" class="bouton_connexion">Connexion</a>
+							<a href="inscription.php" class="bouton">Inscription</a> <br/>
+							<a href="connexion.php" class="bouton">Connexion</a>
 						
 					<?php endif; ?>
 				

@@ -5,7 +5,7 @@ include 'entete.php'; ?>
 
 <?php if(isset($_GET['id'])): ?>
 	<?php  
-	$requete = "SELECT annonce.titre, annonce.description, annonce.date, membre.pseudo, categorie.nom FROM annonce, membre, categorie WHERE annonce.id_membre = membre.id AND annonce.id=?;";
+	$requete = "SELECT annonce.titre, annonce.description, annonce.date, membre.pseudo, categorie.nom FROM annonce, membre, categorie WHERE annonce.id_membre = membre.id AND annonce.id_categorie = categorie.id AND annonce.id=?;";
 	$reponse=$pdo->prepare($requete);
 	$reponse->execute(array($_GET['id']));
 	$enregistrements = $reponse->fetch();

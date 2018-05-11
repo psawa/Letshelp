@@ -10,10 +10,11 @@ if(isset($_POST['titre']) && $_POST['titre']!='' && isset($_POST['description'])
 	$id_categorie=$_POST['categorie'];
 	$id_ville=$_POST['ville'];
 	$id_membre=$_SESSION['membre_id'];
+	$type = $_POST['type'];
 
-	$requete = "INSERT INTO annonce (titre, description, id_membre, id_categorie, id_ville) VALUES (?,?,?,?,?);";
+	$requete = "INSERT INTO annonce (titre, description, id_membre, id_categorie, id_ville, type, date) VALUES (?,?,?,?,?,?,NOW());";
 	$reponse = $pdo->prepare($requete);
-	$reponse->execute(array($titre, $description, $id_membre, $id_categorie, $id_ville));
+	$reponse->execute(array($titre, $description, $id_membre, $id_categorie, $id_ville, $type));
 	echo '<p>Votre annonce vient d\'être publiée !</p>';
 }
 else{

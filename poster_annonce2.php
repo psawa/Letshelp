@@ -15,6 +15,9 @@ include 'entete.php'; ?>
 
 <div class="form">
 	<form method="post" action="enregistrer_annonce.php">
+		<input type="radio" name="type" id ="demande" value="0"> <label for="demande">Demande</label>
+		<input type="radio" name="type" id="proposition" value="1"> <label for="proposition">Proposition</label> <br/>
+
 		<label>Titre : </label>
 		<input type="text" name="titre"> <br><br>
 		<label>Description</label>
