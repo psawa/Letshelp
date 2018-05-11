@@ -15,7 +15,7 @@ include 'entete.php'; ?>
 	<?php 
 	for ($i=0; $i < count($enregistrements) ; $i++) { 
 		echo '<div class="annonces">';
-		echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.$enregistrements[$i]['titre'].'</a>, '.$enregistrements[$i]['pseudo'].'<br/>';
+		echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.htmlentities($enregistrements[$i]['titre']).'</a>, '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
 		echo '</div>';
 	}
 	?>

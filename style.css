@@ -244,7 +244,7 @@ nav a:visited{
 
 footer{
 	height: 55px;
-	background-color: #d8d8cb;
+	background-color: #eaeae1;
 	text-align: center;
 	width: 93%;
 	margin: 4px auto;
@@ -256,6 +256,7 @@ footer{
 footer>p{
 	padding: 0;
 	margin: 0;
+	color: #a3a399;
 }
 /*---------------------------------------Formulaires-----------------------------------*/
 
@@ -281,11 +282,61 @@ input, textarea {
 
 /*---------------------------------------Annonces-----------------------------------*/
  .toutelesannonces{
- 	display:flex;
  }
 
  .annonces{
+ 	display:inline-block;
  	padding: 15px;
  	background-color: white;
  	margin: 10px 15px;
+ 	border-bottom-left-radius: 15px;
+  	border-top-right-radius: 15px;
+  	transition: 0.3s ease-in-out all;
  }
+ .annonces:hover{
+ 	box-shadow: 2px 2px 2px grey;
+ }
+ /*---------------------------------------Annonce-----------------------------------*/
+.titre_annonce{
+/*	outline: solid 1px blue;
+*//*	text-decoration: underline;
+*/	font-size: 1.3em;
+	margin-bottom: 2px;
+	background-color:#00C5C1;
+	padding: 6px 0px 2px;
+	border-top-left-radius: 4px;
+}
+
+.annonce_corps{
+/*	outline: solid 1px yellow;
+*/	display: block;
+	width: 570px;
+	margin-right: 3px;
+}
+.description_annonce{
+/*	outline: solid 1px red;
+*/	text-align: left;
+	min-height: 400px;
+	padding: 12px;
+	background-color: #bbeae9;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+.annonce{
+	margin: auto;
+/*	outline: 2px solid navy;
+*/	display: flex;
+	margin: auto;
+	width: 700px;
+}
+
+.annonce_membre_info{
+/*	outline: 1px solid green;
+*/	width: 250px;
+	height: 200px;
+	background-color: #b9f7f5;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding: 15px 2px;
+}
