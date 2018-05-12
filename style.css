@@ -261,18 +261,14 @@ footer>p{
 /*---------------------------------------Formulaires-----------------------------------*/
 
 label{
-	display: inline-block;
+	display: block;
 	width: 100px;
 	margin-right: 20px;
 	vertical-align: top;
 	text-align: right;}
 
-/*.form{
-	background-color: rgba(255,255,255,0.5);
-	border-radius: 4px;
-	padding: 12px;
-	width: auto;
-}*/
+form{
+}
 input, textarea {
 	/*déjà en inline-block*/
 	width: 150px;
@@ -280,9 +276,24 @@ input, textarea {
 	vertical-align: top;
 }
 
+
 /*---------------------------------------Annonces-----------------------------------*/
- .toutelesannonces{
+ .page_annonces{
+/* 	outline: 2px solid purple;
+*/ 	display: flex;
+ 	min-height: 400px;
  }
+
+ .toutelesannonces{
+/* 	outline: 2px solid navy;
+*/ }
+
+.page_annonces aside{
+	width: 200px;
+	background-color: #f4f4ed;
+	border-radius: 3px;
+	text-align: left;
+}
 
  .annonces_demande{
  	display:inline-block;

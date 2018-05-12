@@ -14,6 +14,7 @@ include 'entete.php'; ?>
 	$description_annonce = $enregistrements['description'];
 	$membre_pseudo = $enregistrements['pseudo'];
 	$categorie = $enregistrements['nom'];
+	$date=$enregistrements['date'];
 	?>
 	<div class="annonce">
 		<div class="annonce_corps">
@@ -22,6 +23,7 @@ include 'entete.php'; ?>
 		</div>
 		<div class="annonce_membre_info"> 
 			<?php echo htmlentities($membre_pseudo); ?><br/>
+			<?php echo htmlentities($date); ?></br>
 			<?php echo htmlentities($categorie) ?>
 		</div>
 	</div>
