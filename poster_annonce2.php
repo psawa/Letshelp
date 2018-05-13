@@ -15,13 +15,13 @@ include 'entete.php'; ?>
 
 <div class="form">
 	<form method="post" action="enregistrer_annonce.php">
-		<input type="radio" name="type" id ="demande" value="0"> <label for="demande">Demande</label>
-		<input type="radio" name="type" id="proposition" value="1"> <label for="proposition">Proposition</label> <br/>
+		<input type="radio" name="type" id ="demande" value="0" required> <label for="demande">Demande</label>
+		<input type="radio" name="type" id="proposition" value="1" required> <label for="proposition">Proposition</label> <br/>
 
 		<label>Titre : </label>
-		<input type="text" name="titre"> <br><br>
+		<input type="text" name="titre" required> <br><br>
 		<label>Description</label>
-		<textarea name="description" cols="50" rows="8"></textarea><br/><br/>
+		<textarea name="description" cols="50" rows="8" required></textarea><br/><br/>
 		<label>ville</label>
 		<select name="ville">
 			<option  value="" selected disabled hidden>Ta ville</option>

@@ -19,7 +19,6 @@ body{
 /*	outline: 4px solid red;
 */	width: 1150px;
 	padding: 20px;
-
 }
 
 .corps{
@@ -120,8 +119,6 @@ header{
 }
 
 /*---------------------------------------Menu-----------------------------------*/
- 
-
 nav{
 /*	outline: green solid 2px;
 */	display: flex;
@@ -141,7 +138,7 @@ nav>ul{
 }
 nav>ul :not(.selected):hover :not(strong){
 	transform : translateY(4px);
-	background-color: #d12727;
+	background-image:linear-gradient(#d12727, #dd6868);
 	border-bottom: 2px solid black;
 
 }
@@ -371,4 +368,28 @@ article{
 }
 article h2{
 	text-align: center;
+}
+
+ /*---------------------------------------Cpasmafaute-----------------------------------*/
+ hr{
+ 	width: 1px;
+ 	height: 80%;
+ }
+
+ .cpasmafaute{
+ 	display: flex;
+ }
+
+.proposer_excuse, .generateur_excuse{
+/*	outline: solid 1px red;
+*/	width: 100%;
+	height: 400px;
+}
+
+.proposer_excuse{
+	border-left: solid 1px black;
+}
+
+.generateur_excuse{
+	border-right: solid 1px black;
 }

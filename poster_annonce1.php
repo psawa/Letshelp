@@ -7,7 +7,6 @@ include 'entete.php'; ?>
 	$requete_departement="SELECT departement.nom, departement.id FROM departement;";
 	$reponse_departement=$pdo->prepare($requete_departement);
 	$reponse_departement->execute();
-	// récupérer tous les enregistrements dans un tableau 
 	$enregistrements_departement = $reponse_departement->fetchAll(); 
 
 	$requete_categorie="SELECT nom, id FROM categorie;";
