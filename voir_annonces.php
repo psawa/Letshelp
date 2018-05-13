@@ -46,7 +46,6 @@ include 'entete.php'; ?>
 		if(isset($_GET['type']) &&$_GET['type']==1){
 			echo "Proposition <br/>";
 		}
-
 		?>
 	</aside>
 
@@ -55,29 +54,26 @@ include 'entete.php'; ?>
 	//Si dans l'url sont spécifiés un type d'annonce ET une catégorie (envoyés par formulaire depuis la même page)
 	if(isset($_GET['type']) && isset($_GET['cat'])){
 		$requete="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, membre.pseudo FROM annonce 
-		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.type = ? AND annonce.id_categorie = ? ORDER BY annonce.date DESC ;";
+		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.type = ? AND annonce.id_categorie = ? AND annonce.active = 1 ORDER BY annonce.date DESC ;";
 		$reponse=$pdo->prepare($requete);
 		$reponse->execute(array($_GET['type'],$_GET['cat']));
 		// récupérer tous les enregistrements dans un tableau 
 		$enregistrements = $reponse->fetchAll(); 
 	}
-
 	// Si dans l'url est spécifié seulement un type d'annonce (envoyé par formulaire depuis la même page)
-
 	elseif(isset($_GET['type'])){
 		$requete="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, membre.pseudo FROM annonce 
-		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.type = ? ORDER BY annonce.date DESC ;";
+		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.type = ? AND annonce.active = 1 ORDER BY annonce.date DESC ;";
 		$reponse=$pdo->prepare($requete);
 		$reponse->execute(array($_GET['type']));
 		// récupérer tous les enregistrements dans un tableau 
 		$enregistrements = $reponse->fetchAll(); 
 	}
-
 	//Si dans l'url est spécifié seulement un id de catégorie (envoyé par formulaire depuis la même page)
 	 
 	elseif(isset($_GET['cat'])){
 		$requete="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, membre.pseudo FROM annonce 
-		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.id_categorie = ? ORDER BY annonce.date DESC ;";
+		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.id_categorie = ? AND annonce.active = 1 ORDER BY annonce.date DESC ;";
 		$reponse=$pdo->prepare($requete);
 		$reponse->execute(array($_GET['cat']));
 		// récupérer tous les enregistrements dans un tableau 
@@ -86,7 +82,7 @@ include 'entete.php'; ?>
 	//Si rien spécifié, on affiche tout
 	else{
 		$requete="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, membre.pseudo FROM annonce 
-		INNER JOIN membre ON membre.id = annonce.id_membre ORDER BY annonce.date DESC;";
+		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.active = 1 ORDER BY annonce.date DESC;";
 		$reponse=$pdo->prepare($requete);
 		$reponse->execute();
 		// récupérer tous les enregistrements dans un tableau 

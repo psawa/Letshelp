@@ -5,7 +5,7 @@ include 'entete.php'; ?>
 
 <?php if(isset($_GET['id'])): ?>
 	<?php  
-	$requete = "SELECT annonce.titre, annonce.description, annonce.date, membre.pseudo, categorie.nom FROM annonce, membre, categorie WHERE annonce.id_membre = membre.id AND annonce.id_categorie = categorie.id AND annonce.id=?;";
+	$requete = "SELECT annonce.titre, annonce.description, annonce.date, membre.pseudo, membre.id, categorie.nom FROM annonce, membre, categorie WHERE annonce.id_membre = membre.id AND annonce.id_categorie = categorie.id AND annonce.id=?;";
 	$reponse=$pdo->prepare($requete);
 	$reponse->execute(array($_GET['id']));
 	$enregistrements = $reponse->fetch();
@@ -29,5 +29,16 @@ include 'entete.php'; ?>
 	</div>
 
 <?php endif; ?>
+
+<?php 
+	if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']==$enregistrements['id']){ ?>
+		<p><a href="supprimer_annonce.php?id=<?php echo $_GET['id'] ?>"> Supprimer cette annonce </a></p>
+	<?php
+	}
+	else{ ?>
+	<p>  </p>
+	<?php 
+	} 
+	?>	
 
 <?php include 'pied.php'; ?>

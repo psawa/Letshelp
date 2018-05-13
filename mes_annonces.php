@@ -7,6 +7,7 @@ include 'entete.php'; ?>
 
 <?php 
 	if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0){ ?>
+	
 <h3> Mes demandes d'aide </h3>
 	<?php
 	$requete="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, membre.pseudo FROM annonce 
