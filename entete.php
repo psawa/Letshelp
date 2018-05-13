@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<title>Let's Help - <?php if(isset($donnees['titre_page'])){echo $donnees['titre_page'];} else{echo "Page inconnue";} ?></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	 <style>
+	<style>
 		@import url('https://fonts.googleapis.com/css?family=Boogaloo|Indie+Flower');
 	</style>
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -47,28 +47,28 @@
 				<ul>
 					<?php
 						if(isset($donnees['menu']) AND $donnees['menu']=='accueil'){
-							echo '<li class="selected">Accueil</li>';
+							echo '<li class="selected"><a href="index.php">Accueil</a> </li>';
 						}
 						else{ echo "<a href='index.php'><li>Accueil</li></a>";
 						}
 						if(isset($donnees['menu']) AND $donnees['menu']=='poster_annonce'){
-							echo "<li class='selected'>Poster une annonce</li>"; 
+							echo '<li class="selected"><a href="poster_annonce1.php">Poster une annonce</a></li>'; 
 						}
 						else{ echo "<a href='poster_annonce1.php'><li>Poster une annonce</li></a>";
 						}
 						
 						if(isset($donnees['menu']) AND $donnees['menu']=='voir_annonces'){
-							echo "<li class='selected'>Voir les annonces</li>";
+							echo '<li class="selected"><a href="voir_annonces.php">Voir les annonces</a></li>';
 						}
 						else{ echo "<a href='voir_annonces.php'><li>Voir les annonces</li></a>";
 						}
 						if(isset($donnees['menu']) AND $donnees['menu']=='cpasmafaute'){
-							echo "<li class='selected'>CpasMaFaute</li>";
+							echo '<li class="selected"><a href="cpasmafaute.php">CpasMaFaute</a></li>';
 						}
 						else{ echo "<a href='cpasmafaute.php'><li>Cpasmafaute</li></a>";
 						}
 						if(isset($donnees['menu']) AND $donnees['menu']=='a_propos'){
-							echo "<li class='selected'>A propos</li>";
+							echo '<li class="selected"><a href="a_propos.php">A propos</a></li>';
 						}
 						else{ echo "<a href='a_propos.php'><li>A propos</li></a>";
 						}

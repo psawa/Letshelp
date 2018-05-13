@@ -18,6 +18,8 @@ include 'entete.php'; ?>
 	</form>
 </div>
 
+<p>Pas encore inscrit ? inscris toi <a href="inscription.php">ici</a></p>
+
 <?php endif; ?>
 
 

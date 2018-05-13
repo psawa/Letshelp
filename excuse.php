@@ -11,11 +11,29 @@ include 'entete.php'; ?>
 	$reponse->execute(array($_GET['retard'], $_GET['situation'], $_GET['type_personne']));
 	$enregistrements = $reponse->fetchAll();
 
-	$choix = rand(0, count($enregistrements)-1);
 	?>
 
- 	<p>Excuse pour un.e <?php echo strtolower($enregistrements[$choix]['type']); ?>, à utiliser <?php echo strtolower($enregistrements[$choix]['nom']) ?> pour un retard de <?php echo $enregistrements[$choix]['temps'] ?> </p>
- 	<?php echo $enregistrements[$choix]['texte']; ?>
+
+	<?php if(count($enregistrements)>0): ?>
+
+
+		<?php $choix = rand(0, count($enregistrements)-1); ?>
+		
+		<?php $membre = $enregistrements[$choix]['pseudo']; ?>
+
+	 	<p>Excuse pour un.e <?php echo strtolower($enregistrements[$choix]['type']); ?>, à utiliser <?php echo strtolower($enregistrements[$choix]['nom']) ?> pour un retard de <?php echo $enregistrements[$choix]['temps']; ?> </p>
+	 	<?php echo $enregistrements[$choix]['texte']; ?>
+
+	 	<br/> <br/>
+	 	<p>excuse proposée par <?php echo $membre; ?> </p>
+
+	 <?php else: ?>
+
+
+	 	<p>Pas encore d'excuses adaptées à cette situation, désolé ! see you soon.</p>
+
+
+	 <?php endif; ?>
 
 <?php else: ?>
 
