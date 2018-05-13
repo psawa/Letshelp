@@ -29,13 +29,48 @@ $enregistrements_type_personne = $reponse_type_personne->fetchAll()
 
 <div class="cpasmafaute">
 	<div class="generateur_excuse">
-		<h2>Générateur d'excuses</h1>
+		<h2>Générateur d'excuses</h2>
+		<form action="excuse.php" method="GET">
+			<!--RETARD -->
+			<select name="retard">
+ 			 <option value="" selected disabled hidden>Temps de retard</option>
+			<?php 
+			for ($i=0; $i < count($enregistrements_retard) ; $i++) { 
+				echo '<option value="'.$enregistrements_retard[$i]['id'].'">'.$enregistrements_retard[$i]['temps'].'</option>';
+			}
+			?>
+			</select> 
+			<br/><br/>
+
+			<!--SITUATION -->
+			<select name="situation">
+ 			 <option value="" selected disabled hidden>Situation</option>
+			<?php 
+			for($i=0; $i < count($enregistrements_situation) ; $i++) { 
+				echo '<option value="'.$enregistrements_situation[$i]['id'].'">'.$enregistrements_situation[$i]['nom'].'</option>';
+			}
+			?>
+			</select> 
+			<br/><br/>
+
+			<!--type_personne -->
+			<select name="type_personne">
+ 			 <option value="" selected disabled hidden>Vous êtes...</option>
+			<?php 
+			for ($i=0; $i < count($enregistrements_type_personne) ; $i++) { 
+				echo '<option value="'.$enregistrements_type_personne[$i]['id'].'">'.$enregistrements_type_personne[$i]['nom'].'</option>';
+			}
+			?>
+			</select> 
+			<br/><br/>
+			<input type="submit"/>
+		</form>
 	</div>
 
-
+<!-- =============================================== -->
 
 	<div class="proposer_excuse">
-		<h2>Proposer une excuses</h1>
+		<h2>Proposer une excuses</h2>
 		<form action="enregistrer_excuse.php" method="POST">
 			<!--RETARD -->
 			<select name="retard">
@@ -61,7 +96,7 @@ $enregistrements_type_personne = $reponse_type_personne->fetchAll()
 
 			<!--type_personne -->
 			<select name="type_personne">
- 			 <option value="" selected disabled hidden>Vous êtes...</option>
+ 			 <option value="" selected disabled hidden>Pour...</option>
 			<?php 
 			for ($i=0; $i < count($enregistrements_type_personne) ; $i++) { 
 				echo '<option value="'.$enregistrements_type_personne[$i]['id'].'">'.$enregistrements_type_personne[$i]['nom'].'</option>';
