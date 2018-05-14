@@ -7,6 +7,7 @@
 	<meta charset="utf-8">
 	<title>Let's Help - <?php if(isset($donnees['titre_page'])){echo $donnees['titre_page'];} else{echo "Page inconnue";} ?></title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- On importe des polices via google font -->
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Boogaloo|Indie+Flower');
 	</style>
@@ -14,21 +15,6 @@
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-	<style type="text/css" media="all">
-		/* max-width pour les petits écrans*/
-		@media screen and (max-width : 640 px) {
-			#coteacote
-			{
-			display: block;
-			}
-			section, aside
-			{
-				width: auto;
-			}
-		}
-	</style>
-		
-		
 	<div class="tout">
 		<header>
 			<div class="haut_header">
@@ -38,6 +24,7 @@
 					<p class="sous_titre">N'est il pas temps de s'aider ?</p>
 				</div>
 				<div class="coin_utilisateur">
+					<!-- Si l'utilisateur est connecté, on affiche les infos utilisateur -->
 					<?php if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0):?>
 						<ul id="pseudo_survol">
 								<li><a href="mon_compte.php"><span class="pseudo"><?php echo $_SESSION['pseudo']; ?></span></a></li>
@@ -49,6 +36,7 @@
 									</ul>
 								</li>
 							</ul>
+					<!-- S'il n'est pas connecté, on affiche le bouton inscription et connexion -->
 					<?php else: ?>
 						
 							<a href="inscription.php" class="bouton">Inscription</a> <br/>
@@ -58,6 +46,7 @@
 				
 				</div>
 			</div>
+		<!-- Menu de navigation, où lorsqu'on est sur une page, son onglet associé change de style -->
 		<nav>
 				<ul>
 					<?php

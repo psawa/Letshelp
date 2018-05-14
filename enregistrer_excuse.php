@@ -4,6 +4,7 @@ $donnees['titre_page']='';
 include 'entete.php'; ?>
 
 <?php 
+	//on vérifie que les champs ne sont pas vides
 	if(isset($_POST['retard']) && $_POST['retard'] != '' && isset($_POST['situation']) && $_POST['situation'] != '' && isset($_POST['type_personne']) && $_POST['type_personne'] != '' && isset($_POST['texte']) && $_POST['texte'] != ''){
 		
 		$retard = $_POST['retard'];

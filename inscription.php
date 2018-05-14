@@ -3,8 +3,10 @@
 	$donnees['titre_page']='Inscription';
 include 'entete.php'; ?>
 
+<!-- Si l'utilisateur est déjà connecté (via un lien apr un exemple) -->
 <?php if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0): ?>
 		<p>S'il te plaît, déconnecte-toi avant de t'inscrire. </p>
+<!-- Sinon on affiche le formulaire -->	
 <?php else: ?>
 <div class="form">
 	<form action="enregistrer_membre.php" method="post">

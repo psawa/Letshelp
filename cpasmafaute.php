@@ -3,6 +3,7 @@ $donnees['menu'] ='cpasmafaute';
 $donnees['titre_page']="cpasmafaute";
 include 'entete.php'; ?>
 
+<!-- Requetes pour pouvoir utiliser les <select> -->
 <?php
 $requete_retard="SELECT retard.temps, retard.id FROM retard;";
 $reponse_retard=$pdo->prepare($requete_retard);
@@ -24,10 +25,8 @@ $reponse_type_personne->execute();
 $enregistrements_type_personne = $reponse_type_personne->fetchAll();
 ?>
 
-
-
-
 <div class="cpasmafaute">
+	<!-- Partie gauche pour générer excuse -->
 	<div class="generateur_excuse">
 		<h2>Générateur d'excuses</h2>
 		<form action="excuse.php" method="GET">
@@ -65,6 +64,7 @@ $enregistrements_type_personne = $reponse_type_personne->fetchAll();
 			<br/><br/>
 			<input type="submit"/>
 		</form>
+		<!-- Requete qui compte le nombre d'excuses au total -->
 		<?php 
 		$requete_nb="SELECT count(id) as nb_excuses FROM excuse;";
 		$reponse_nb=$pdo->prepare($requete_nb);
@@ -79,6 +79,7 @@ $enregistrements_type_personne = $reponse_type_personne->fetchAll();
 <!-- =============================================== -->
 		
 	<div class="proposer_excuse">
+		<!-- On vérifie que l'utilisateur est connecté -->
 		<?php if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0): ?>
 			<h2>Proposer une excuses</h2>
 			<form action="enregistrer_excuse.php" method="POST">
@@ -120,6 +121,7 @@ $enregistrements_type_personne = $reponse_type_personne->fetchAll();
 				<input type="submit" value="Envoyer !">
 
 			</form>
+		<!-- Si l'utilisateur n'est pas connecté -->
 		<?php else: ?>
 			<p> Tu dois être <a href="connexion.php"> connecté </a> pour proposer une excuse</p>
 		<?php endif; ?>
@@ -127,19 +129,5 @@ $enregistrements_type_personne = $reponse_type_personne->fetchAll();
 
 </div>
 
-<?php
-	if (isset($_SESSION['membre_id]) AND ($_SESSION['membre_id']==$enregistrements['id'])
-	{
-		?>
-		<p><a href="supprimer_excuse.php?id=<?php echo S_GET['id']?>"> Supprimer cette excuse </a> <p>
-		<?php
-	}
-	else 
-	{ 
-		?>
-		<p>  <p>
-		<?php
-	}
-	?>
 
 <?php include 'pied.php'; ?>

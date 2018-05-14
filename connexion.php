@@ -3,6 +3,7 @@
 	$donnees['titre_page']='Connexion';
 include 'entete.php'; ?>
 
+<!-- On vérifie que l'utilisateur n'est pas déjà connecté (s'il possède un lien) -->
 <?php if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0): ?>
 
 <p>Tu es déjà connecté, que fais tu voyons ?</p>

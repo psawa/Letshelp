@@ -9,7 +9,7 @@ include 'entete.php'; ?>
 		$motdepasse = $_POST['motdepasse'];
 		$pseudo = $_POST['pseudo'];
 		$email = $_POST['email'];
-		
+		//requete qui prend seulement le pseudo s'il existe
 		$requete1 = "SELECT pseudo FROM membre WHERE pseudo = ?;";
 		$reponse1 = $pdo->prepare($requete1);
 		$reponse1 -> execute(array($pseudo));
@@ -20,7 +20,7 @@ include 'entete.php'; ?>
 		<p>Vous n'avez pas renseigné tous les champs. Veuillez recommencer.<p>
 	<?php 
 	}
-
+	// Si le pseudo existe déjà
 	if($nombre_enregistrements1>0){
 		?>
 		<p>Désolé ! ce pseudo est déjà utilisé.</p>

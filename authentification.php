@@ -2,7 +2,9 @@
 	$donnees['menu']='authentification';
 	$donnees['titre_page']='authentification';
 	include 'entete.php'; ?>
+
 <?php 
+	//on vérifie que les champz sont pas vides
 	if($_POST['pseudo'] !='' and $_POST['motdepasse']!=''){
 		$pseudo = $_POST['pseudo'];
 		$motdepasse = $_POST['motdepasse'];
@@ -18,8 +20,8 @@
 
 	$nombereponses = count($enregistrements);
 
-	if($nombereponses>0){//on check que le pseudo existe
-		if($enregistrements[0]['mot_de_passe'] == md5($_POST['motdepasse'])){//on check que le mdp est bon
+	if($nombereponses>0){//on vérifie que le pseudo existe
+		if($enregistrements[0]['mot_de_passe'] == md5($_POST['motdepasse'])){//on vérifie que le mdp est bon
 			$_SESSION['pseudo'] = $pseudo;
 			$_SESSION['membre_id'] = $enregistrements[0]['id'];
 			echo 'Bienvenue, '.$pseudo;
@@ -27,8 +29,7 @@
 
 		}
 		else{
-			echo "Non c'est pas le bon mot de passe, retourne à la <a href='index.php'>page d'accueil </a>";
-
+			echo "Mauvais mot de passe, tu peux <a href='connexion.php'>réessayer</a>";
 		}
 	}
 	else{
