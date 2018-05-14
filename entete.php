@@ -14,6 +14,21 @@
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+	<style type="text/css" media="all">
+		/* max-width pour les petits écrans*/
+		@media screen and (max-width : 640 px) {
+			#coteacote
+			{
+			display: block;
+			}
+			section, aside
+			{
+				width: auto;
+			}
+		}
+	</style>
+		
+		
 	<div class="tout">
 		<header>
 			<div class="haut_header">
