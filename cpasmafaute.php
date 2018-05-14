@@ -127,5 +127,19 @@ $enregistrements_type_personne = $reponse_type_personne->fetchAll();
 
 </div>
 
+<?php
+	if (isset($_SESSION['membre_id]) AND ($_SESSION['membre_id']==$enregistrements['id'])
+	{
+		?>
+		<p><a href="supprimer_excuse.php?id=<?php echo S_GET['id']?>"> Supprimer cette excuse </a> <p>
+		<?php
+	}
+	else 
+	{ 
+		?>
+		<p>  <p>
+		<?php
+	}
+	?>
 
 <?php include 'pied.php'; ?>
