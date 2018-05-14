@@ -15,12 +15,12 @@ include 'entete.php'; ?>
 	<aside>
 		<form method="get" action="voir_annonces.php">
 			<label for="demande">
-				<div class="annonces_demande">Demande</div>
+				<div class="annonce_demande">Demande</div>
 			</label>
 			<input type="checkbox" name="type" id ="demande" value="0"> 
 
 			<label for="proposition">
-				<div class="annonces_proposition">Proposition</div>
+				<div class="annonce_proposition">Proposition</div>
 			</label>
 			<input type="checkbox" name="type" id="proposition" value="1">
 			<br/><br/>
