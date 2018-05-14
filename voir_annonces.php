@@ -11,6 +11,7 @@ include 'entete.php'; ?>
 	$enregistrements_categorie = $reponse_categorie->fetchAll();
 ?>
 <div class="page_annonces">
+	<!-- Le formulaire qui fait office de "filtre" -->
 	<aside>
 		<form method="get" action="voir_annonces.php">
 			<label for="demande">
@@ -66,7 +67,6 @@ include 'entete.php'; ?>
 		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.type = ? AND annonce.active = 1 ORDER BY annonce.date DESC ;";
 		$reponse=$pdo->prepare($requete);
 		$reponse->execute(array($_GET['type']));
-		// récupérer tous les enregistrements dans un tableau 
 		$enregistrements = $reponse->fetchAll(); 
 	}
 	//Si dans l'url est spécifié seulement un id de catégorie (envoyé par formulaire depuis la même page)
@@ -76,7 +76,6 @@ include 'entete.php'; ?>
 		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.id_categorie = ? AND annonce.active = 1 ORDER BY annonce.date DESC ;";
 		$reponse=$pdo->prepare($requete);
 		$reponse->execute(array($_GET['cat']));
-		// récupérer tous les enregistrements dans un tableau 
 		$enregistrements = $reponse->fetchAll(); 
 	}
 	//Si rien spécifié, on affiche tout
@@ -85,7 +84,6 @@ include 'entete.php'; ?>
 		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.active = 1 ORDER BY annonce.date DESC;";
 		$reponse=$pdo->prepare($requete);
 		$reponse->execute();
-		// récupérer tous les enregistrements dans un tableau 
 		$enregistrements = $reponse->fetchAll(); 
 	}
 	?>
@@ -93,13 +91,15 @@ include 'entete.php'; ?>
 	<div class="toutelesannonces">
 		<?php 
 		for ($i=0; $i < count($enregistrements) ; $i++) {
+			// Si l'annonce est de type 0(demande), on lui affecte la classe "annonce_demande"
 			if($enregistrements[$i]['type']==0){
-				echo '<div class="annonces_demande">';
+				echo '<div class="annonce_demande">';
 				echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.htmlentities($enregistrements[$i]['titre']).'</a>, '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
 				echo '</div>';
 			}
+			// sinon, elle a la classe "annonce_proposition"
 			else{
-				echo '<div class="annonces_proposition">';
+				echo '<div class="annonce_proposition">';
 				echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.htmlentities($enregistrements[$i]['titre']).'</a>, '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
 				echo '</div>';
 			}

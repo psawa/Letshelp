@@ -3,13 +3,14 @@ $donnees['menu'] ='poster_annonce';
 $donnees['titre_page']="Poster une annonce";
 include 'entete.php'; ?>
 
+<!-- On vérifie que la personne est toujours connectée, et que le champs ne sont pas vides -->
 <?php if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0 AND isset($_GET['categorie']) AND isset($_GET['departement']) && $_GET['departement'] != '' && $_GET['categorie']!=''):?>
 
+<!-- Requete permettant d'avoir la liste des villes correspondant au département sélectionné précedemment -->
 <?php 
 	$requete_ville="SELECT ville.nom, ville.id FROM ville WHERE ville.id_departement = ? ORDER BY ville.nom ASC;";
 	$reponse_ville=$pdo->prepare($requete_ville);
 	$reponse_ville->execute(array($_GET['departement']));
-	// récupérer tous les enregistrements dans un tableau 
 	$enregistrements_ville = $reponse_ville->fetchAll(); 
 ?>
 
@@ -38,6 +39,7 @@ include 'entete.php'; ?>
 	</form>
 </div>
 
+<!-- Si l'utilisateur n'a pas rempli l'étape 1 correctement, il y est re-dirigé -->
 <?php else: ?>
 <?php header("location:poster_annonce1.php"); ?>
 <?php endif; ?>

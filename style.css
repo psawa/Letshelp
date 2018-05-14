@@ -292,7 +292,7 @@ input, textarea {
 	text-align: left;
 }
 
- .annonces_demande{
+ .annonce_demande{
  	display:inline-block;
  	padding: 15px;
  	background-color: #96f2ef;
@@ -302,7 +302,7 @@ input, textarea {
   	transition: 0.3s ease-in-out all;
  }
 
- .annonces_proposition{
+ .annonce_proposition{
  	display:inline-block;
  	padding: 15px;
  	background-color: #f2abab;
@@ -312,16 +312,36 @@ input, textarea {
   	transition: 0.3s ease-in-out all;
  }
 
- .annonces_proposition:hover, .annonces_demande:hover{
+ .annonce_desactivee{
+ 	display:inline-block;
+ 	padding: 15px;
+ 	background-color: #AFAFAF;
+ 	margin: 10px 15px;
+ 	border-bottom-left-radius: 15px;
+  	border-top-right-radius: 15px;
+  	transition: 0.3s ease-in-out all;
+ }
+
+ .annonce_proposition:hover, .annonce_demande:hover{
  	box-shadow: 2px 2px 2px grey;
  }
  /*---------------------------------------Annonce-----------------------------------*/
-.titre_annonce{
+.titre_annonce_0{
 /*	outline: solid 1px blue;
 *//*	text-decoration: underline;
 */	font-size: 1.3em;
 	margin-bottom: 2px;
 	background-color:#00C5C1;
+	padding: 6px 0px 2px;
+	border-top-left-radius: 4px;
+}
+
+.titre_annonce_1{
+/*	outline: solid 1px blue;
+*//*	text-decoration: underline;
+*/	font-size: 1.3em;
+	margin-bottom: 2px;
+	background-color:#F2ABAB;
 	padding: 6px 0px 2px;
 	border-top-left-radius: 4px;
 }
@@ -332,12 +352,22 @@ input, textarea {
 	width: 570px;
 	margin-right: 3px;
 }
-.description_annonce{
+.description_annonce_0{
 /*	outline: solid 1px red;
 */	text-align: left;
 	min-height: 400px;
 	padding: 12px;
 	background-color: #bbeae9;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+.description_annonce_1{
+/*	outline: solid 1px red;
+*/	text-align: left;
+	min-height: 400px;
+	padding: 12px;
+	background-color: #F2ABAB;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
 }

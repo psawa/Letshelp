@@ -3,6 +3,10 @@ $donnees['menu'] ='poster_annonce';
 $donnees['titre_page']="Poster une annonce";
 include 'entete.php'; ?>
 
+<!-- On vérifie que la personne est connectée -->
+<?php if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0):?>
+
+<!-- Requetes qui permettent d'utiliser les <select> avec la liste des départements & catégories-->
 <?php 
 	$requete_departement="SELECT departement.nom, departement.id FROM departement;";
 	$reponse_departement=$pdo->prepare($requete_departement);
@@ -15,9 +19,7 @@ include 'entete.php'; ?>
 	// récupérer tous les enregistrements dans un tableau 
 	$enregistrements_categorie = $reponse_categorie->fetchAll(); 
 ?>
-
-<?php if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0):?>
-
+<!-- Formulaire  -->
 <div class="form">
 	<form method="get" action="poster_annonce2.php">
 		<label>Categorie</label>
@@ -44,6 +46,7 @@ include 'entete.php'; ?>
 	</form>
 </div>
 
+<!-- Si la personne n'est pas connectée -->
 <?php else: ?>
 
 <p>Tu dois te <a href="connexion.php">connecter</a> pour poster une annonce ! </p>
