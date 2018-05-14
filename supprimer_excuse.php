@@ -7,7 +7,7 @@ include 'entete.php'; ?>
 <?php 
 	if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0){ ?>
 	<?php 
-	$requete = "SELECT cpasmafaute.id_membre FROM cpasmafaute WHERE cpasmafaute.id=?;";
+	$requete = "SELECT excuse.id_membre FROM excuse WHERE excuse.id=?;";
 	$reponse=$pdo->prepare($requete);
 	$reponse->execute(array($_GET['id']));
 	$enregistrements = $reponse->fetch();
@@ -18,7 +18,7 @@ include 'entete.php'; ?>
 <?php if(isset($_GET['id'])AND $_SESSION['membre_id']==$membre_id){ ?>
 	
 	<?php 
-	$requete="UPDATE cpasmafaute SET active = 0 WHERE cpasmafaute.id = ?;";
+	$requete="UPDATE excuse SET active = 0 WHERE excuse.id = ?;";
 	$reponse=$pdo->prepare($requete);
 	$reponse->execute(array($_GET['id']));
 	$reponse->execute();
@@ -32,7 +32,7 @@ else { ?>
 ?>	
 
 <?php 
-$requete="SELECT active FROM cpasmafaute WHERE cpasmafaute.id=?;";
+$requete="SELECT active FROM excuse WHERE excuse.id=?;";
 $reponse=$pdo->prepare($requete);
 $reponse->execute(array($_GET['id']));
 $reponse->execute();
