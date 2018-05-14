@@ -33,9 +33,13 @@ include 'entete.php'; ?>
 			<?php } ?>	
 		</div>
 		<div class="annonce_membre_info"> 
-			<?php echo htmlentities($membre_pseudo); ?><br/>
-			<?php echo htmlentities($date); ?></br>
-			<?php echo htmlentities($categorie) ?>
+			<?= htmlentities($membre_pseudo); ?><br/>
+			<?= htmlentities($date); ?><br/>
+			<?= htmlentities($categorie); ?> <br/>
+			<form action="contact.php" method="post">
+				<input type="hidden" name="id" value="<?= $_GET['id'] ?>" />
+				<input type="submit" value="contacter">
+			</form>
 		</div>
 	</div>
 

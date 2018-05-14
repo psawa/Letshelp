@@ -90,20 +90,24 @@ include 'entete.php'; ?>
 
 	<div class="toutelesannonces">
 		<?php 
-		for ($i=0; $i < count($enregistrements) ; $i++) {
-			// Si l'annonce est de type 0(demande), on lui affecte la classe "annonce_demande"
-			if($enregistrements[$i]['type']==0){
-				echo '<div class="annonce_demande">';
-				echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.htmlentities($enregistrements[$i]['titre']).'</a>, '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
-				echo '</div>';
+		if(count($enregistrements)>0){
+			for ($i=0; $i < count($enregistrements) ; $i++) {
+				// Si l'annonce est de type 0(demande), on lui affecte la classe "annonce_demande"
+				if($enregistrements[$i]['type']==0){
+					echo '<div class="annonce_demande">';
+					echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.htmlentities($enregistrements[$i]['titre']).'</a>, '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
+					echo '</div>';
+				}
+				// sinon, elle a la classe "annonce_proposition"
+				else{
+					echo '<div class="annonce_proposition">';
+					echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.htmlentities($enregistrements[$i]['titre']).'</a>, '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
+					echo '</div>';
+				}
 			}
-			// sinon, elle a la classe "annonce_proposition"
-			else{
-				echo '<div class="annonce_proposition">';
-				echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.htmlentities($enregistrements[$i]['titre']).'</a>, '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
-				echo '</div>';
-			}
-			
+		}
+		else{
+			echo "Il n'y a pas d'annonce correspondant à ces critères";
 		}
 		?>
 	</div>
