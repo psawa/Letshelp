@@ -24,6 +24,7 @@
 		if($enregistrements[0]['mot_de_passe'] == md5($_POST['motdepasse'])){//on vérifie que le mdp est bon
 			$_SESSION['pseudo'] = $pseudo;
 			$_SESSION['membre_id'] = $enregistrements[0]['id'];
+			$_SESSION['membre_email'] = $enregistrements[0]['email'];
 			echo 'Bienvenue, '.$pseudo;
 			header("location:index.php");
 
