@@ -31,6 +31,11 @@ if(isset($_POST['submit'])){
 
 	echo '<p>Votre message vient d\'être envoyé. Retour aux <a href="voir_annonces.php">annonces</a>.</p>';
 
+	//On augmente le compteur de messages qui s'afiche dans annonce.php
+	$requete="UPDATE annonce SET nb_message = nb_message + 1 WHERE annonce.id = ?;";
+	$reponse=$pdo->prepare($requete);
+	$reponse->execute(array($_POST['id']));
+
 }
 else{
 	echo "<p>Erreur fatale, le site va exploser</p>";

@@ -7,7 +7,7 @@ include 'entete.php'; ?>
 <!-- Si il ya un id dans l'url, on affiche l'annonce correspondante  --> 
 <?php if(isset($_GET['id'])): ?>
 	<?php  
-	$requete = "SELECT annonce.titre, annonce.description, annonce.date, annonce.type, annonce.active, membre.pseudo, membre.id, categorie.nom FROM annonce, membre, categorie WHERE annonce.id_membre = membre.id AND annonce.id_categorie = categorie.id AND annonce.id=?;";
+	$requete = "SELECT annonce.titre, annonce.description, annonce.date, annonce.type, annonce.nb_message, annonce.active, annonce.vue, membre.pseudo, membre.id, categorie.nom,ville.nom as ville FROM annonce, membre, categorie, ville WHERE annonce.id_membre = membre.id AND annonce.id_categorie = categorie.id AND annonce.id_ville = ville.id AND annonce.id=?;";
 	$reponse=$pdo->prepare($requete);
 	$reponse->execute(array($_GET['id']));
 	$enregistrements = $reponse->fetch();
@@ -17,7 +17,18 @@ include 'entete.php'; ?>
 	$membre_pseudo = $enregistrements['pseudo'];
 	$categorie = $enregistrements['nom'];
 	$date=$enregistrements['date'];
+	$ville = $enregistrements['ville'];
+	$nb_message = $enregistrements['nb_message'];
+	$nb_vue = $enregistrements['vue'];
 	?>
+
+	<?php 
+	//On incrémente le compteur de vues 
+	$requete="UPDATE annonce SET vue = vue + 1 WHERE annonce.id = ?;";
+	$reponse=$pdo->prepare($requete);
+	$reponse->execute(array($_GET['id']));
+	?>
+
 	<div class="annonce">
 		<div class="annonce_corps">
 			<!-- Si l'annonce est de type "demande", on l'affiche en bleu -->
@@ -34,12 +45,15 @@ include 'entete.php'; ?>
 		</div>
 		<div class="annonce_membre_info"> 
 			<?= htmlentities($membre_pseudo); ?><br/>
-			<?= htmlentities($date); ?><br/>
-			<?= htmlentities($categorie); ?> <br/>
+			<?= htmlentities($ville) ?> <br/> <br/>
+			<?= htmlentities($categorie); ?> <br/> <br/>
+			<?= htmlentities($date); ?><br/><br/>
 			<form action="contact.php" method="post">
 				<input type="hidden" name="id" value="<?= $_GET['id'] ?>" />
 				<input type="submit" value="contacter">
 			</form>
+			<?= $nb_message." message(s)"; ?><br/><br/>
+			<?= $nb_vue." vue(s)"; ?>
 		</div>
 	</div>
 
