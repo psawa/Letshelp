@@ -12,11 +12,16 @@ if(isset($_POST['submit'])){
 	$reponse->execute(array($_POST['id']));
 	$enregistrement = $reponse->fetch();
 
+	$requete2 = "SELECT annonce.titre FROM annonce WHERE annonce.id = ?;";
+	$reponse2 = $pdo->prepare($requete2);
+	$reponse2->execute(array($_POST['id']));
+	$enregistrement2 = $reponse2->fetch();
+
 	$nom = $_POST['nom']; 
-	$mailfrom = $_POST['mailfrom']; 
-	$mailto = $enregistrement['email'] ;
+	$mailfrom = htmlentities($_POST['mailfrom']); 
+	$mailto = htmlentities($enregistrement['email']); //comme on a pas vérifié a variable email dans enregistrer membre (difficile) on sécurise tout de même ici
 	$message = $_POST['message']; 
-	$sujet = 'Message concernant votre annonce sur Let\'s Help';
+	$sujet = 'Message concernant votre annonce "'.$enregistrement2['titre'].' " sur Let\'s Help';
 
 
 	$headers = ("From: ".$mailfrom);
@@ -27,7 +32,9 @@ if(isset($_POST['submit'])){
 	echo '<p>Votre message vient d\'être envoyé. Retour aux <a href="voir_annonces.php">annonces</a>.</p>';
 
 }
-
+else{
+	echo "<p>Erreur fatale, le site va exploser</p>";
+}
 ?>
 
 
