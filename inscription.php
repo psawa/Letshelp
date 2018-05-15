@@ -10,12 +10,10 @@ include 'entete.php'; ?>
 <?php else: ?>
 <div class="form">
 	<form action="enregistrer_membre.php" method="post">
-		<label for="pseudo">pseudo : </label>
-		<input type="text" name="pseudo" id="pseudo" required> <br>
-		<label for="motdepasse">Mot de passe : </label>
-		<input type="password" name="motdepasse" id="motdepasse" required> <br>
-		<label for="email">Email : </label>
-		<input type="email" name="email" id="email" required> <br>
+		<input type="text" name="pseudo" id="pseudo" placeholder="Ton pseudo" required> <br/>
+		<input type="password" name="motdepasse" id="motdepasse" placeholder="Ton mot de passe" required><br/>
+		<input type="password" name="motdepasse_confirm" id="motdepasse_confirm" placeholder="Confirme ton mot de passe" required> <br>
+		<input type="email" name="email" id="email" placeholder="Ton email" required> <br>
 		<input type="submit" name="S\'inscrire">
 	</form>
 </div>
