@@ -3,12 +3,12 @@ $donnees['menu'] ='cpasmafaute';
 $donnees['titre_page']=' Voir excuse ';
 include 'entete.php'; ?>
 
-<?php if(isset($_GET['retard']) && $_GET['retard'] != '' && isset($_GET['situation']) && $_GET['situation'] != '' && isset($_GET['type_personne']) && $_GET['type_personne'] != ''): ?>
+<?php if(isset($_GET['retard']) && $_GET['retard'] != '' && isset($_GET['situation']) && $_GET['situation'] != ''): ?>
 	
 	<?php 
-	$requete="SELECT excuse.texte, type_personne.nom AS type, membre.pseudo, situation.nom, retard.temps FROM excuse, type_personne, membre, situation , retard WHERE excuse.id_retard = retard.id AND excuse.id_type_personne = type_personne.id AND excuse.id_membre = membre.id AND excuse.id_situation  = situation.id AND excuse.id_retard = ? AND excuse.id_situation = ? AND excuse.id_type_personne = ?;";
+	$requete="SELECT excuse.texte, membre.pseudo, situation.nom, retard.temps FROM excuse, membre, situation , retard WHERE excuse.id_retard = retard.id AND excuse.id_membre = membre.id AND excuse.id_situation  = situation.id AND excuse.id_retard = ? AND excuse.id_situation = ?;";
 	$reponse=$pdo->prepare($requete);
-	$reponse->execute(array($_GET['retard'], $_GET['situation'], $_GET['type_personne']));
+	$reponse->execute(array($_GET['retard'], $_GET['situation']));
 	$enregistrements = $reponse->fetchAll();
 
 	?>
@@ -21,7 +21,7 @@ include 'entete.php'; ?>
 		
 		<?php $membre = $enregistrements[$choix]['pseudo']; ?>
 
-	 	<p>Excuse pour un.e <?php echo strtolower($enregistrements[$choix]['type']); ?>, à utiliser <?php echo strtolower($enregistrements[$choix]['nom']) ?> pour un retard de <?php echo $enregistrements[$choix]['temps']; ?> </p>
+	 	<p>Excuse à utiliser <?php echo strtolower($enregistrements[$choix]['nom']) ?> pour un retard de <?php echo $enregistrements[$choix]['temps']; ?> </p>
 	 	<?php echo $enregistrements[$choix]['texte']; ?>
 
 	 	<br/> <br/>

@@ -18,12 +18,6 @@ $reponse_situation->execute();
 $enregistrements_situation = $reponse_situation->fetchAll();
 ?>
 
-<?php
-$requete_type_personne="SELECT type_personne.nom, type_personne.id FROM type_personne;";
-$reponse_type_personne=$pdo->prepare($requete_type_personne);
-$reponse_type_personne->execute();
-$enregistrements_type_personne = $reponse_type_personne->fetchAll();
-?>
 
 <div class="cpasmafaute">
 	<!-- Partie gauche pour générer excuse -->
@@ -47,17 +41,6 @@ $enregistrements_type_personne = $reponse_type_personne->fetchAll();
 			<?php 
 			for($i=0; $i < count($enregistrements_situation) ; $i++) { 
 				echo '<option value="'.$enregistrements_situation[$i]['id'].'">'.$enregistrements_situation[$i]['nom'].'</option>';
-			}
-			?>
-			</select> 
-			<br/><br/>
-
-			<!--type_personne -->
-			<select name="type_personne">
- 			 <option value="" selected disabled hidden>Vous êtes...</option>
-			<?php 
-			for ($i=0; $i < count($enregistrements_type_personne) ; $i++) { 
-				echo '<option value="'.$enregistrements_type_personne[$i]['id'].'">'.$enregistrements_type_personne[$i]['nom'].'</option>';
 			}
 			?>
 			</select> 
@@ -105,18 +88,7 @@ $enregistrements_type_personne = $reponse_type_personne->fetchAll();
 				</select> 
 				<br/><br/>
 
-				<!--type_personne -->
-				<select name="type_personne">
-	 			 <option value="" selected disabled hidden>Pour...</option>
-				<?php 
-				for ($i=0; $i < count($enregistrements_type_personne) ; $i++) { 
-					echo '<option value="'.$enregistrements_type_personne[$i]['id'].'">'.$enregistrements_type_personne[$i]['nom'].'</option>';
-				}
-				?>
-				</select> 
-				<br/><br/>
-				<label for="texte" >Ton excuse: </label>
-				<textarea name="texte" id="texte" cols="50" rows="2" required> </textarea>
+				<textarea name="texte" id="texte" cols="50" rows="3" required placeholder="Ton excuse..."></textarea>
 				<br/><br/>
 				<input type="submit" value="Envoyer !">
 
