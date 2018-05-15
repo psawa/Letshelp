@@ -7,7 +7,7 @@ include 'entete.php'; ?>
 <!-- Si il ya un id dans l'url, on affiche l'annonce correspondante  --> 
 <?php if(isset($_GET['id'])): ?>
 	<?php  
-	$requete = "SELECT annonce.titre, annonce.description, annonce.date, annonce.type, annonce.nb_message, annonce.active, annonce.vue, membre.pseudo, membre.id, categorie.nom,ville.nom as ville FROM annonce, membre, categorie, ville WHERE annonce.id_membre = membre.id AND annonce.id_categorie = categorie.id AND annonce.id_ville = ville.id AND annonce.id=?;";
+	$requete = "SELECT annonce.titre, annonce.description, annonce.date, annonce.type, annonce.nb_message, annonce.active, annonce.vue, ville.id_departement, membre.pseudo, membre.id, categorie.nom,ville.nom as ville FROM annonce, membre, categorie, ville WHERE annonce.id_membre = membre.id AND annonce.id_categorie = categorie.id AND annonce.id_ville = ville.id AND annonce.id=?;";
 	$reponse=$pdo->prepare($requete);
 	$reponse->execute(array($_GET['id']));
 	$enregistrements = $reponse->fetch();
@@ -20,6 +20,7 @@ include 'entete.php'; ?>
 	$ville = $enregistrements['ville'];
 	$nb_message = $enregistrements['nb_message'];
 	$nb_vue = $enregistrements['vue'];
+	$num_departement = $enregistrements['id_departement'];
 	?>
 
 	<?php 
@@ -45,7 +46,7 @@ include 'entete.php'; ?>
 		</div>
 		<div class="annonce_membre_info"> 
 			<?= htmlentities($membre_pseudo); ?><br/>
-			<?= htmlentities($ville) ?> <br/> <br/>
+			<?= htmlentities($ville)." (".htmlentities($num_departement).")"; ?> <br/> <br/>
 			<?= htmlentities($categorie); ?> <br/> <br/>
 			<?= htmlentities($date); ?><br/><br/>
 			<form action="contact.php" method="post">
