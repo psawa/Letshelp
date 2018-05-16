@@ -19,7 +19,7 @@
 	<div class="tout">
 		<header>
 			<div class="haut_header">
-				<a href="index.php"><img src="images/logo10.png" class="logo" alt="logo"></a>
+				<a href="index.php"><img src="images/logo.png" class="logo" alt="logo"></a>
 				<div class="titres_top">
 					<p class="titre">Let's Help</p>
 					<p class="sous_titre">N'est il pas temps de s'aider ?</p>
