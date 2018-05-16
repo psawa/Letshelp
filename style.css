@@ -74,22 +74,20 @@ header{
 	text-align: center;
 	margin: 0px;
 	/*font-style: oblique;*/
-	text-shadow: #FFF 1px 1px, #FFF -1px 1px, #FFF -1px -1px, #FFF 1px -1px;	
+	text-shadow: #000 1px 1px, #000 -1px 1px, #000 -1px -1px, #000 1px -1px;	
     font-family: 'Boogaloo', cursive;
+    color:white;
 }
 
 .pseudo{
-	font-size: 2.3em;
-	text-align: center;
-	margin: 0px;
-	/*font-style: oblique;*/
+	font-size: 2em;
 	text-shadow: #000 1px 1px, #000 -1px 1px, #000 -1px -1px, #000 1px -1px;	
-    font-family: 'Boogaloo', cursive;
+    font-family: 'Roboto Condensed', sans-serif;
     color: white;
     padding: 3px 5px;
-    border: solid 1px white;
-    border-radius: 100%;
+    border-radius: 15px;
     transition: all 0.2s ease-in-out;
+    margin-top: 34px;
 }
 
 .pseudo:hover{
@@ -105,7 +103,8 @@ header{
 	margin-top: 0px;
 	margin-bottom: 0px;
 	font-size: 1.3em;
-    font-family: 'Indie Flower', cursive;
+ 	font-family: 'Roboto Condensed', sans-serif;
+
 
 	/*text-decoration: bold;*/
 
@@ -128,6 +127,7 @@ nav{
 /*	outline: green solid 2px;
 */	display: flex;
 	padding: 0;
+
 }
 nav>ul{
 /*	outline: solid 1px black;
@@ -143,13 +143,12 @@ nav>ul{
 }
 nav>ul :not(.selected):hover :not(strong){
 	transform : translateY(4px);
-	background-image:linear-gradient(#d12727, #dd6868);
 	border-bottom: 2px solid black;
+	background-color: #d12727;
 
 }
-nav>ul>.selected{
-	color: black;
-	text-shadow: #FFF 1px 1px, #FFF -1px 1px, #FFF -1px -1px, #FFF 1px -1px;
+nav>ul>.selected>a{
+	color: white;
 	width: 200px;
 	text-align: center;
 
@@ -164,6 +163,7 @@ nav>ul li{
 	padding: 5px 1px;
 	transition: all .1s ease-in-out;
 	width: 200px;
+	border-top: 1px solid white;
 
 }
 nav a{
@@ -210,6 +210,7 @@ nav a:visited{
 
 .coin_utilisateur ul ul li{
 	background-color: beige;
+	box-shadow: 0px 0px 5px 0px #656565;
 	border-radius: 15px;
 	margin:4px auto;
 	padding: 6px 6px;

@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 $donnees['menu'] ='';
 $donnees['titre_page']='Administration';
 include 'entete.php'; ?>
@@ -21,9 +21,8 @@ if(isset($_SESSION['admin']) AND $_SESSION['admin']==1):?>
 				<tr>
 					<th>Pseudo</th>
 					<th>email</th>
-					<th>admin</th>
+					<th>Admin</th>
 					<th>Nombre annonces</th>
-					<th>Nombre excuses</th>
 				</tr>
 				<?php
 				for ($i=0; $i < count($enregistrements)-1 ; $i++) { 

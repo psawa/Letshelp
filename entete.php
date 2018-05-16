@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" media="handheld and (max-width:800)" href="style_mobile.css">
 	<!-- On importe des polices via google font -->
 	<style>
-		@import url('https://fonts.googleapis.com/css?family=Boogaloo|Indie+Flower');
+		@import url('https://fonts.googleapis.com/css?family=Boogaloo|Indie+Flower|Roboto+Condensed');
 	</style>
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
