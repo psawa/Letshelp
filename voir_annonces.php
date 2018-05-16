@@ -19,6 +19,9 @@ include 'entete.php'; ?>
 	$enregistrements_departement = $reponse_departement->fetchAll();
 ?>
 
+<h2>Les annonces</h2>
+
+
 <div class="page_annonces">
 	<!-- Le formulaire qui fait office de "filtre" -->
 	<aside>
@@ -33,7 +36,6 @@ include 'entete.php'; ?>
 			</label>
 			<input type="checkbox" name="type" id="proposition" value="1">
 			<br/><br/>
-			<label for="cat">categorie</label>
 			<select name="cat">
  				<option value="" selected disabled hidden>Catégories</option>
 				<?php 
@@ -42,8 +44,7 @@ include 'entete.php'; ?>
 					}
 				?>
 			</select>
-
-			<label for="departement">Departement</label>
+			<br/>
 			<select name="departement">
 				<option value="" selected disabled hidden>Départements</option>
 				<?php 
@@ -53,7 +54,7 @@ include 'entete.php'; ?>
 				?>
 			</select>
 
-
+		<br/><br/>
 		<input type="submit" value="Filtrer">
 		</form>
 		<p>Filtres actifs : </p>
@@ -104,15 +105,19 @@ include 'entete.php'; ?>
 			for ($i=0; $i < count($enregistrements) ; $i++) {
 				// Si l'annonce est de type 0(demande), on lui affecte la classe "annonce_demande"
 				if($enregistrements[$i]['type']==0){
+					echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">';
 					echo '<div class="annonce_demande">';
-					echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.htmlentities($enregistrements[$i]['titre']).'</a>, '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
+					echo htmlentities($enregistrements[$i]['titre']).', '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
 					echo '</div>';
+					echo '</a>';
 				}
 				// sinon, elle a la classe "annonce_proposition"
 				else{
+					echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">';
 					echo '<div class="annonce_proposition">';
-					echo '<a href="annonce.php?id='.$enregistrements[$i]['id'].'">'.htmlentities($enregistrements[$i]['titre']).'</a>, '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
+					echo htmlentities($enregistrements[$i]['titre']).', '.htmlentities($enregistrements[$i]['pseudo']).'<br/>';
 					echo '</div>';
+					echo '</a>';
 				}
 			}
 		}

@@ -6,9 +6,14 @@ $couleur_dominante: #d12727
 /*---------------------------------------Grandes parties-----------------------------------*/
 
 body{
-/*	background-color: rgba(255, 218, 245,0.4);
-*/	padding: 0;
+	padding: 0;
 }
+
+p, h1, h2, h3 {
+	font-family: 'Barlow', sans-serif;
+}
+
+
 
 .tout{
 /*	outline: black solid 1px;
@@ -17,27 +22,31 @@ body{
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0px;
+	
 
 }
 
 .contenu{
-/*	outline: 4px solid red;
-*/	width: 1150px;
+	/*outline: 4px solid red;*/
+	width: 1150px;
 	padding: 20px;
+	text-align: center;
+	margin:0 auto;
+
 }
 
 .corps{
-/*	outline: 1px solid green;
-*/	display: flex;
+	/*outline: 1px solid green;*/
+	display: flex;
 	color: black;
-	text-align: center;
+	
 	width: 93%;
 	min-height: 400px;
-	background-color: beige;
+	background-color: white;
 	margin:0 auto ;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-
+	background-color:#F5F5F5;
 }
 
 /*---------------------------------------Header-----------------------------------*/
@@ -80,14 +89,14 @@ header{
 }
 
 .pseudo{
-	font-size: 2em;
+	font-size: 1.7em;
 	text-shadow: #000 1px 1px, #000 -1px 1px, #000 -1px -1px, #000 1px -1px;	
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
     padding: 3px 5px;
     border-radius: 15px;
     transition: all 0.2s ease-in-out;
-    margin-top: 34px;
+    margin-right:20px;
 }
 
 .pseudo:hover{
@@ -114,8 +123,10 @@ header{
 /*	outline: 2px solid yellow;
 */	transform: translateY(0px);
 	transition: all .25s ease-in-out;
-	width:100px;
-	height: 100px;
+	width:80px;
+	height: 80px;
+	margin-top:10px;
+	margin-left:10px;
 }
 
 .logo:hover{
@@ -144,7 +155,9 @@ nav>ul{
 nav>ul :not(.selected):hover :not(strong){
 	transform : translateY(4px);
 	border-bottom: 2px solid black;
-	background-color: #d12727;
+	background-color:#d12727 ;
+
+
 
 }
 nav>ul>.selected>a{
@@ -209,7 +222,7 @@ nav a:visited{
 }
 
 .coin_utilisateur ul ul li{
-	background-color: beige;
+	background-color: #F5F5F5;
 	box-shadow: 0px 0px 5px 0px #656565;
 	border-radius: 15px;
 	margin:4px auto;
@@ -219,7 +232,7 @@ nav a:visited{
 }
 
 #actions_user a:hover li{
-	transform: scale(1.3);
+	transform: scale(1.2);
 }
 
 /*---------------------------------------insciption / connexion-----------------------------------*/
@@ -229,7 +242,7 @@ nav a:visited{
 	border:1px solid white;
 	border-radius: 13px;
 	display: inline-block;
-	color: black;
+	color: white;
 	text-decoration: none;
     font-family: 'Boogaloo', cursive;
     font-size: 1.2em;
@@ -253,6 +266,7 @@ footer{
 	margin: 4px auto;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+	background-color:#F5F5F4;
 
 }
 
@@ -263,12 +277,29 @@ footer>p{
 }
 /*---------------------------------------Formulaires-----------------------------------*/
 
+table{
+	border : 1px solid;
+	border-radius: 8px;
+	border-collapse:collapse;
+	margin: auto;
+}
+
+td,th{
+	padding: 4px;
+	border : 1px solid;
+}
+
+tr:nth-child(2n){
+	background-color: lightgrey;
+}
+
 label{
 	display: block;
 	width: 100px;
 	margin-right: 20px;
 	vertical-align: top;
-	text-align: right;}
+	text-align: middle;
+}
 
 form{
 }
@@ -276,9 +307,14 @@ input{
 	/*déjà en inline-block*/
 	width: 150px;
 	padding: 4px;
-	vertical-align: top;
+	vertical-align: middle;
+	margin: 3px;
 }
 
+select{
+	margin: 5px;
+	vertical-align: middle;
+}
 
 /*---------------------------------------Annonces-----------------------------------*/
  .page_annonces{
@@ -293,25 +329,30 @@ input{
 
 .page_annonces aside{
 	width: 200px;
-	background-color: #f4f4ed;
+	background-color: #e6e6e6;
 	border-radius: 3px;
 	text-align: left;
+	margin-top: 0px;
+	border-radius: 11px;
+	padding: 5px 15px;
 }
 
  .annonce_demande{
  	display:inline-block;
  	padding: 15px;
- 	background-color: #96f2ef;
+ 	background-color: #1eb8a0;
+ 	color: white;
  	margin: 10px 15px;
  	border-bottom-left-radius: 15px;
   	border-top-right-radius: 15px;
   	transition: 0.3s ease-in-out all;
- }
+}
 
  .annonce_proposition{
  	display:inline-block;
  	padding: 15px;
- 	background-color: #f2abab;
+ 	background-color: #dc2727;
+ 	color: white;
  	margin: 10px 15px;
  	border-bottom-left-radius: 15px;
   	border-top-right-radius: 15px;

@@ -17,7 +17,7 @@ if(isset($_SESSION['admin']) AND $_SESSION['admin']==1):?>
 			$reponse->execute();
 			$enregistrements = $reponse->fetchall();
 		?>
-			<table border="1px">
+			<table>
 				<tr>
 					<th>Pseudo</th>
 					<th>email</th>
