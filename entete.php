@@ -30,6 +30,10 @@
 								<li><a href="mon_compte.php"><span class="pseudo"><?php echo $_SESSION['pseudo']; ?></span></a></li>
 								<li>
 									<ul id="actions_user">
+											<?php // afficher les options administrateurs pour les admin
+											if($_SESSION['admin']==1) {?>
+											<a href="administration.php"><li>Administration</li></a>
+											<?php } ?>
 											<a href="mes_annonces.php"><li>Mes annonces</li></a>
 											<a href="mes_excuses.php"><li>Mes excuses</li></a>
 											<a href="deconnexion.php"><li>Deconnexion</li></a>

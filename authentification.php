@@ -25,6 +25,7 @@
 			$_SESSION['pseudo'] = $pseudo;
 			$_SESSION['membre_id'] = $enregistrements[0]['id'];
 			$_SESSION['membre_email'] = $enregistrements[0]['email'];
+			$_SESSION['admin'] = $enregistrements[0]['admin'];
 			echo 'Bienvenue, '.$pseudo;
 			header("location:index.php");
 
