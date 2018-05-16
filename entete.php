@@ -6,8 +6,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Let's Help - <?php if(isset($donnees['titre_page'])){echo $donnees['titre_page'];} else{echo "Page inconnue";} ?></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="media_queries.css">
+	<link rel="stylesheet" media="all" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" media="handheld" href="media_queries.css">
 	<!-- On importe des polices via google font -->
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Boogaloo|Indie+Flower');
