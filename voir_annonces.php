@@ -10,6 +10,15 @@ include 'entete.php'; ?>
 	$reponse_categorie->execute();
 	$enregistrements_categorie = $reponse_categorie->fetchAll();
 ?>
+
+<?php
+//Requete pour afficher les départements dans les filtres
+	$requete_departement="SELECT nom, id FROM departement;";
+	$reponse_departement=$pdo->prepare($requete_departement);
+	$reponse_departement->execute();
+	$enregistrements_departement = $reponse_departement->fetchAll();
+?>
+
 <div class="page_annonces">
 	<!-- Le formulaire qui fait office de "filtre" -->
 	<aside>
@@ -33,6 +42,18 @@ include 'entete.php'; ?>
 					}
 				?>
 			</select>
+
+			<label for="departement">Departement</label>
+			<select name="departement">
+				<option value="" selected disabled hidden>Départements</option>
+				<?php 
+					for ($i=0; $i < count($enregistrements_departement) ; $i++) { 
+						echo '<option value="'.$enregistrements_departement[$i]['id'].'">'.$enregistrements_departement[$i]['nom'].'</option>';
+					}
+				?>
+			</select>
+
+
 		<input type="submit" value="Filtrer">
 		</form>
 		<p>Filtres actifs : </p>
@@ -47,46 +68,35 @@ include 'entete.php'; ?>
 		if(isset($_GET['type']) &&$_GET['type']==1){
 			echo "Proposition <br/>";
 		}
+		if(isset($_GET['departement'])){
+			echo $enregistrements_departement[$_GET['departement']-1]['nom']."<br/>";
+		}
 		?>
 	</aside>
 
 
 	<?php 
-	//Si dans l'url sont spécifiés un type d'annonce ET une catégorie (envoyés par formulaire depuis la même page)
-	if(isset($_GET['type']) && isset($_GET['cat'])){
-		$requete="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, membre.pseudo FROM annonce 
-		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.type = ? AND annonce.id_categorie = ? AND annonce.active = 1 ORDER BY annonce.date DESC ;";
-		$reponse=$pdo->prepare($requete);
-		$reponse->execute(array($_GET['type'],$_GET['cat']));
-		// récupérer tous les enregistrements dans un tableau 
-		$enregistrements = $reponse->fetchAll(); 
-	}
-	// Si dans l'url est spécifié seulement un type d'annonce (envoyé par formulaire depuis la même page)
-	elseif(isset($_GET['type'])){
-		$requete="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, membre.pseudo FROM annonce 
-		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.type = ? AND annonce.active = 1 ORDER BY annonce.date DESC ;";
-		$reponse=$pdo->prepare($requete);
-		$reponse->execute(array($_GET['type']));
-		$enregistrements = $reponse->fetchAll(); 
-	}
-	//Si dans l'url est spécifié seulement un id de catégorie (envoyé par formulaire depuis la même page)
-	 
-	elseif(isset($_GET['cat'])){
-		$requete="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, membre.pseudo FROM annonce 
-		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.id_categorie = ? AND annonce.active = 1 ORDER BY annonce.date DESC ;";
-		$reponse=$pdo->prepare($requete);
-		$reponse->execute(array($_GET['cat']));
-		$enregistrements = $reponse->fetchAll(); 
-	}
-	//Si rien spécifié, on affiche tout
-	else{
-		$requete="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, membre.pseudo FROM annonce 
-		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.active = 1 ORDER BY annonce.date DESC;";
-		$reponse=$pdo->prepare($requete);
-		$reponse->execute();
-		$enregistrements = $reponse->fetchAll(); 
-	}
+	$filtre='';
+	if(isset($_GET['type'])){
+		$filtre='AND annonce.type = '.$_GET['type'];
+		}
+		 
+	if(isset($_GET['cat'])){
+		$filtre=$filtre.' AND annonce.id_categorie = '.$_GET['cat'];
+		}
+
+	if(isset($_GET['departement'])){
+		$filtre=$filtre.' AND ville.id_departement = '.$_GET['departement'];
+		}
+
+
+	$requete="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, membre.pseudo, ville.id_departement FROM annonce 
+	INNER JOIN membre ON membre.id = annonce.id_membre INNER JOIN ville ON annonce.id_ville = ville.id WHERE annonce.active = 1 ".$filtre." ORDER BY annonce.date DESC;";
+	$reponse=$pdo->prepare($requete);
+	$reponse->execute();
+	$enregistrements = $reponse->fetchAll(); 
 	?>
+
 
 	<div class="toutelesannonces">
 		<?php 
