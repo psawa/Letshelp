@@ -48,7 +48,7 @@ include 'entete.php'; ?>
 				<option value="" selected disabled hidden>Départements</option>
 				<?php 
 					for ($i=0; $i < count($enregistrements_departement) ; $i++) { 
-						echo '<option value="'.$enregistrements_departement[$i]['id'].'">'.$enregistrements_departement[$i]['nom'].'</option>';
+						echo '<option value="'.$enregistrements_departement[$i]['id'].'">'.$enregistrements_departement[$i]['id']." - ".$enregistrements_departement[$i]['nom'].'</option>';
 					}
 				?>
 			</select>
