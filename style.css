@@ -138,6 +138,7 @@ nav{
 /*	outline: green solid 2px;
 */	display: flex;
 	padding: 0;
+	margin-top: 8px;
 
 }
 nav>ul{
@@ -154,6 +155,7 @@ nav>ul{
 }
 nav>ul :not(.selected):hover :not(strong){
 	transform : translateY(4px);
+	border-top: none;
 	border-bottom: 2px solid black;
 	background-color:#d12727 ;
 
@@ -163,7 +165,7 @@ nav>ul :not(.selected):hover :not(strong){
 nav>ul>.selected>a{
 	color: white;
 	width: 200px;
-	text-align: center;
+ƒ
 
 
 }
@@ -242,7 +244,7 @@ nav a:visited{
 	border:1px solid white;
 	border-radius: 13px;
 	display: inline-block;
-	color: white;
+	color: black;
 	text-decoration: none;
     font-family: 'Boogaloo', cursive;
     font-size: 1.2em;

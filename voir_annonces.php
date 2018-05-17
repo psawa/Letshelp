@@ -19,8 +19,8 @@ include 'entete.php'; ?>
 	$enregistrements_departement = $reponse_departement->fetchAll();
 ?>
 
-<h2>Les annonces</h2>
-
+<!-- <h2>Les annonces</h2>
+ -->
 
 <div class="page_annonces">
 	<!-- Le formulaire qui fait office de "filtre" -->

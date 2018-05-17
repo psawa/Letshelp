@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	require_once('connexion_base_easyphp.php'); ?>
+	require_once('connexion_base_mamp.php'); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

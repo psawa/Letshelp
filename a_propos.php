@@ -5,12 +5,12 @@ $donnees['menu'] ='a_propos';
 $donnees['titre_page']="A propos";
 include 'entete.php'; ?>
 
-<nav>
+<div>
 	<ul>
 		<li><a href="#Concept">Concept de la page</a></li>
 		<li><a href="#Contact">Contact</a></li>
 	</ul>
-</nav>
+</div>
 
 <article>
 	<h2 id="Concept">Concept de la page</h2>

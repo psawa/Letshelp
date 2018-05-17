@@ -25,7 +25,7 @@ if(isset($_SESSION['admin']) AND $_SESSION['admin']==1):?>
 					<th>Nombre annonces</th>
 				</tr>
 				<?php
-				for ($i=0; $i < count($enregistrements)-1 ; $i++) { 
+				for ($i=0; $i < count($enregistrements); $i++) { 
 					echo '<tr>';
 					echo '<td>'.$enregistrements[$i]['pseudo'].'</td>';
 					echo '<td>'.$enregistrements[$i]['email'].'</td>';
