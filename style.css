@@ -187,21 +187,40 @@ nav{
 */	display: flex;
 	padding: 0;
 	margin-top: 8px;
-
 }
+
 nav>ul{
 /*	outline: solid 1px black;
-*/	display: flex;
-	border-radius: 5px;
-/*	background-color: #de9191;*/
-	height:30px; 
-    font-family: 'Boogaloo', cursive;
+*/	display: flex; 
+	height:30px;
+	margin: auto;
+}
+
+nav ul li {
+/*	outline: solid 1px white;
+*/	list-style-type: none; 
+}
+
+nav ul li a{
+	display: block;
+/*	outline: 1px solid black;
+*/	font-family: 'Boogaloo', cursive;
+	border-top: 1px solid white;
+	border-radius: 8px;
     font-size: 1.2em;
-    margin: auto;
     text-align: center;
+    width: 200px;
+    margin: 0;
+    transition: all .1s ease-in-out;
+   	text-decoration: none;
+	color: black;
+	padding: 5px 1px;
+
 
 }
-nav>ul :not(.selected):hover :not(strong){
+
+
+nav ul li:not(.selected) a:hover{
 	transform : translateY(4px);
 	border-top: none;
 	border-bottom: 2px solid black;
@@ -212,32 +231,7 @@ nav>ul :not(.selected):hover :not(strong){
 }
 nav>ul>.selected>a{
 	color: white;
-	width: 200px;
-ƒ
-
-
 }
-
-
-nav>ul li{
-/*	outline: solid 1px white;
-*/	list-style-type: none; 
-	border-radius: 8px;
-	padding: 5px 1px;
-	transition: all .1s ease-in-out;
-	width: 200px;
-	border-top: 1px solid white;
-
-}
-nav a{
-	text-decoration: none;
-	color: black;
-}
-nav a:visited{
-	color:black;
-}
-
-
 
 /*---------------------------------------Actions utilisateur-----------------------------------*/
 
@@ -247,9 +241,22 @@ nav a:visited{
 	text-align: center;
 }
 
-.coin_utilisateur ul a{
-	color: black;
+.coin_utilisateur ul li a{
 	text-decoration: none;
+
+}
+
+.coin_utilisateur ul ul a{
+	color: black;
+	display: block;
+	background-color: #F5F5F5;
+	box-shadow: 0px 0px 5px 0px #656565;
+	border-radius: 15px;
+	margin:4px auto;
+	padding: 6px 6px;
+	font-size: 1.2em;
+	transition: all .1s ease-in-out;
+	font-family: 'Barlow', sans-serif;
 }
 
 .coin_utilisateur ul{
@@ -272,19 +279,8 @@ nav a:visited{
 	display: block;
 }
 
-.coin_utilisateur ul ul li{
-	background-color: #F5F5F5;
-	box-shadow: 0px 0px 5px 0px #656565;
-	border-radius: 15px;
-	margin:4px auto;
-	padding: 6px 6px;
-	font-size: 1.2em;
-	transition: all .1s ease-in-out;
-	font-family: 'Barlow', sans-serif;
- 
-}
 
-#actions_user a:hover li{
+#actions_user a:hover{
 	transform: scale(1.2);
 }
 

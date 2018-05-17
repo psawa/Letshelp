@@ -22,9 +22,11 @@ include 'entete.php'; ?>
 <!-- Tableau qui récapitile les enregistrements -->
 <div class="toutemesexcuses">
 	<table>
-		<th>Temps de retard</th>
-		<th>Situation</th>
-		<th>Excuse</th>
+		<tr>
+			<th>Temps de retard</th>
+			<th>Situation</th>
+			<th>Excuse</th>
+		</tr>
 		<?php 
 		if(count($enregistrements)>0){
 			for($i=0; $i < count($enregistrements) ; $i++){

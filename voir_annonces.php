@@ -29,14 +29,18 @@ include 'entete.php'; ?>
 	<!-- Le formulaire qui fait office de "filtre" -->
 	<aside>
 		<form method="get" action="voir_annonces.php">
-			<label for="demande">
-				<div class="annonce_demande">Demande</div>
-			</label>
+			<div class="annonce_demande">
+				<label for="demande">
+					Demande
+				</label>
+			</div>
 			<input type="checkbox" name="type" id ="demande" value="0"> 
 
-			<label for="proposition">
-				<div class="annonce_proposition">Proposition</div>
-			</label>
+			<div class="annonce_proposition">
+				<label for="proposition">
+					Proposition
+				</label>
+			</div>
 			<input type="checkbox" name="type" id="proposition" value="1">
 			<br/><br/>
 			<select name="cat">

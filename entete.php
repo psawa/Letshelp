@@ -1,13 +1,14 @@
 <?php 
 	session_start();
-	require_once('connexion_base_easyphp.php'); ?>
+	require_once('connexion_base_mamp.php');
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title>Let's Help - <?php if(isset($donnees['titre_page'])){echo $donnees['titre_page'];} else{echo "Page inconnue";} ?></title>
 	<link rel="stylesheet" media="all" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" media="handheld and (max-width:800)" href="style_mobile.css">
 	<!-- On importe des polices via google font -->
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Boogaloo|Indie+Flower|Roboto+Condensed');
@@ -33,11 +34,11 @@
 									<ul id="actions_user">
 											<?php // afficher les options administrateurs pour les admin
 											if($_SESSION['admin']==1) {?>
-											<a href="administration.php"><li>Administration</li></a>
+											<li><a href="administration.php">Administration</a></li>
 											<?php } ?>
-											<a href="mes_annonces.php"><li>Mes annonces</li></a>
-											<a href="mes_excuses.php"><li>Mes excuses</li></a>
-											<a href="deconnexion.php"><li>Deconnexion</li></a>
+											<li><a href="mes_annonces.php">Mes annonces</a></li>
+											<li><a href="mes_excuses.php">Mes excuses</a></li>
+											<li><a href="deconnexion.php">Deconnexion</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -58,28 +59,28 @@
 						if(isset($donnees['menu']) AND $donnees['menu']=='accueil'){
 							echo '<li class="selected"><a href="index.php">Accueil</a> </li>';
 						}
-						else{ echo "<a href='index.php'><li>Accueil</li></a>";
+						else{ echo "<li><a href='index.php'>Accueil</a></li>";
 						}
 						if(isset($donnees['menu']) AND $donnees['menu']=='poster_annonce'){
 							echo '<li class="selected"><a href="poster_annonce1.php">Poster une annonce</a></li>'; 
 						}
-						else{ echo "<a href='poster_annonce1.php'><li>Poster une annonce</li></a>";
+						else{ echo "<li><a href='poster_annonce1.php'>Poster une annonce</a></li>";
 						}
 						
 						if(isset($donnees['menu']) AND $donnees['menu']=='voir_annonces'){
 							echo '<li class="selected"><a href="voir_annonces.php">Voir les annonces</a></li>';
 						}
-						else{ echo "<a href='voir_annonces.php'><li>Voir les annonces</li></a>";
+						else{ echo "<li><a href='voir_annonces.php'>Voir les annonces</a></li>";
 						}
 						if(isset($donnees['menu']) AND $donnees['menu']=='cpasmafaute'){
 							echo '<li class="selected"><a href="cpasmafaute.php">CpasMaFaute</a></li>';
 						}
-						else{ echo "<a href='cpasmafaute.php'><li>Cpasmafaute</li></a>";
+						else{ echo "<li><a href='cpasmafaute.php'>Cpasmafaute</a></li>";
 						}
 						if(isset($donnees['menu']) AND $donnees['menu']=='a_propos'){
 							echo '<li class="selected"><a href="a_propos.php">A propos</a></li>';
 						}
-						else{ echo "<a href='a_propos.php'><li>A propos</li></a>";
+						else{ echo "<li><a href='a_propos.php'>A propos</a></li>";
 						}
 					?>
 				</ul>

@@ -21,8 +21,8 @@ include 'entete.php'; ?>
 		?>
 
 			<ul>
-				<li>Mon pseudo : <?php echo $membre_pseudo ?></li><br>
-				<li>Mon email : <?php echo $membre_email ?></li><br>
+				<li>Mon pseudo : <?php echo $membre_pseudo ?></li>
+				<li>Mon email : <?php echo $membre_email ?></li>
 			</ul>
 
 		
