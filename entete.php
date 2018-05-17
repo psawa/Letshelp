@@ -13,8 +13,8 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Boogaloo|Indie+Flower|Roboto+Condensed');
 	</style>
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<div class="tout">
