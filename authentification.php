@@ -10,7 +10,7 @@
 		$motdepasse = $_POST['motdepasse'];
 	}
 	else{
-		echo "Tu n'as pas rempli toute les cases, petit.e tête en l'air ! ";
+		echo "Tu n'as pas remplit toutes les cases, petit.e tête en l'air ! ";
 	}
 	$requete = 'SELECT * FROM membre WHERE pseudo= ?;';
 	$reponse = $pdo->prepare($requete);
