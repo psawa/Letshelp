@@ -20,7 +20,7 @@ include 'entete.php'; ?>
 	<h3>Les annonces</h3>
 	<p> 
 		"Let's Help : n'est-il pas temps de s'aider ?" est un projet universitaire crée par des étudiant-e-s en deuxième année de licence.<br/>
-		Le principe de ce site est de mettre en lien des personnes qui ont besoin d'aide et des personnes qui acceptent de rendre service. <br/> 
+		Le principe de ce site est de mettre en liens des personnes qui ont besoin d'aide et des personnes qui acceptent de rendre service. <br/> 
 		Tu peux poster deux types d'annonce : Le type dit "demande", dans lequel tu peux formuler une demande d'aide, et le type dit "proposition" dans lequel tu présente une de tes compétences, que tu acceptes de mettre en oeuvre pour d'autres.
 		Pour poster une annonce, il te suffit de lui donner un titre explicite, une description détaillée, sa catégorie, et la ville qui lui est associée. Le tout, respectant nos conditions d'utilisations, qui sont simplement du bon sens et du savoir vivre. (Cela me dédouane de les écrire). <br/>
 		Pour voir les annonces, il faut se rendre dans l'onglet "voir annonces". Par défaut, seront affichées des annonces des deux types (explicités plus haut), mais de couleurs distinctes. Tu peux par la suite filtrer les annonces par type et catégorie.<br/><br/>
