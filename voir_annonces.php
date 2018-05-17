@@ -3,6 +3,9 @@ $donnees['menu'] ='voir_annonces';
 $donnees['titre_page']="Voir les annonces";
 include 'entete.php'; ?>
 
+<h1>Annonces</h1>
+<br>
+
 <?php 
 //Requete pour afficher les catégories dans les filtres
 	$requete_categorie="SELECT nom, id FROM categorie;";

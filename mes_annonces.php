@@ -4,6 +4,7 @@
 include 'entete.php'; ?>
 
 <h1> Mes Annonces </h1>
+<br/>
 
 <?php 
 	if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0){ ?>
@@ -23,9 +24,11 @@ include 'entete.php'; ?>
 		if(count($enregistrements_0)>0){
 			for($i=0; $i < count($enregistrements_0) ; $i++){
 				if($enregistrements_0[$i]['active']==1) {
+					echo '<a href="annonce.php?id='.$enregistrements_0[$i]['id'].'">';
 					echo '<div class="annonce_demande">';
-					echo '<a href="annonce.php?id='.$enregistrements_0[$i]['id'].'">'.htmlentities($enregistrements_0[$i]['titre']).'</a>, '.htmlentities($enregistrements_0[$i]['pseudo']).'<br/>';
+					echo htmlentities($enregistrements_0[$i]['titre']).', '.htmlentities($enregistrements_0[$i]['pseudo']).'<br/>';
 					echo '</div>';
+					echo '</a>';
 				}
 				else{
 					echo '<div class="annonce_desactivee">';
@@ -59,9 +62,11 @@ include 'entete.php'; ?>
 		if(count($enregistrements_1)>0){
 			for($i=0; $i < count($enregistrements_1) ; $i++){
 				if($enregistrements_1[$i]['active']==1) {
+					echo '<a href="annonce.php?id='.$enregistrements_0[$i]['id'].'">';
 					echo '<div class="annonce_proposition">';
-					echo '<a href="annonce.php?id='.$enregistrements_1[$i]['id'].'">'.htmlentities($enregistrements_1[$i]['titre']).'</a>, '.htmlentities($enregistrements_1[$i]['pseudo']).'<br/>';
+					echo htmlentities($enregistrements_0[$i]['titre']).', '.htmlentities($enregistrements_0[$i]['pseudo']).'<br/>';
 					echo '</div>';
+					echo '</a>';
 				}
 				else{
 					echo '<div class="annonce_desactivee">';

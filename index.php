@@ -3,7 +3,8 @@ $donnees['menu']="accueil";
 $donnees['titre_page']="Accueil";
 include('entete.php'); ?>
 
-<h2>Bienvenue sur <span style="font-family: 'Boogaloo', cursive;">Let's Help</span> ;) !</h2>
+<h1>Bienvenue sur <span style="font-family: 'Boogaloo', cursive;">Let's Help</span> ;) !</h1>
+<br/>
 
 <p>
 	Ce site est un site d'entraide coopératif. tu peux <a href="poster_annonce1.php"> chercher / proposer de l'aide</a>, <a href="voir_annonces.php"> voir les annonces en cours </a>, et <a href="cpasmafaute.php"> trouver/poster des excuses </a>.<br/><br/>

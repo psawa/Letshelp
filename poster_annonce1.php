@@ -3,6 +3,9 @@ $donnees['menu'] ='poster_annonce';
 $donnees['titre_page']="Poster une annonce";
 include 'entete.php'; ?>
 
+<h1>Poster une annonce</h1>
+<br/>
+
 <!-- On vérifie que la personne est connectée -->
 <?php if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0):?>
 

@@ -5,6 +5,7 @@
 include 'entete.php'; ?>
 
 <h1> Mes Excuses </h1>
+<br>
 
 <!-- On vérifie que la personne est connectée -->
 <?php 

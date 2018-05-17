@@ -3,6 +3,9 @@
 	$donnees['titre_page']='Inscription';
 include 'entete.php'; ?>
 
+<h1>Inscription</h1>
+<br/>
+
 <!-- Si l'utilisateur est déjà connecté (via un lien apr un exemple) -->
 <?php if(isset($_SESSION['membre_id']) AND $_SESSION['membre_id']>0): ?>
 		<p>S'il te plaît, déconnecte-toi avant de t'inscrire. </p>

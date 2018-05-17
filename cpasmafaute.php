@@ -3,6 +3,9 @@ $donnees['menu'] ='cpasmafaute';
 $donnees['titre_page']="cpasmafaute";
 include 'entete.php'; ?>
 
+<h1>Cpasmafaute</h1>
+<br/>
+
 <!-- Requetes pour pouvoir utiliser les <select> -->
 <?php
 $requete_retard="SELECT retard.temps, retard.id FROM retard;";

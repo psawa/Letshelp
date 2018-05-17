@@ -5,7 +5,10 @@ $donnees['menu'] ='a_propos';
 $donnees['titre_page']="A propos";
 include 'entete.php'; ?>
 
-<div>
+<h1 id="Concept">Concept de la page</h1>
+	<br>
+
+<div class="a_propos">
 	<ul>
 		<li><a href="#Concept">Concept de la page</a></li>
 		<li><a href="#Contact">Contact</a></li>
@@ -13,7 +16,7 @@ include 'entete.php'; ?>
 </div>
 
 <article>
-	<h2 id="Concept">Concept de la page</h2>
+
 	<h3>Les annonces</h3>
 	<p> 
 		"Let's Help : n'est-il pas temps de s'aider ?" est un projet universitaire crée par des étudiant-e-s de deuxième année de licence.<br/>
