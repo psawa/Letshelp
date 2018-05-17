@@ -6,6 +6,7 @@ include 'entete.php'; ?>
 <?php if(isset($_POST['id'])): ?>
 	
 	<h1>Contacter l'auteur de l'annonce</h1>
+	<br/>
 	<form action="envoi.php" method="POST">
 		<input type="hidden" name="id" value="<?=$_POST['id']?>"/>
 	    <input type="text" placeholder="Ton nom" name="nom"> <br/>
