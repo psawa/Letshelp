@@ -1,6 +1,6 @@
 <?php 
 $donnees['menu'] ='';
-$donnees['titre_page']='';
+$donnees['titre_page']='Récupérer mon mot de passe';
 include 'entete.php'; ?>
 
 <?php
@@ -16,7 +16,8 @@ include 'entete.php'; ?>
 
 	mail($mailto, $sujet, $txt, $headers);
 
-	echo '<p>Nous vous avons envoyé un email de confirmation</p>';
+	echo '<p>Nous vous avons envoyé un email de confirmation</p><br/>';
+	echo "<p>Attention, il se peut qu'il soit arrivé dans vos spams.</p>";
 
 	$requete="UPDATE membre SET mdp_temp = ? WHERE membre.email = ?;";
 	$reponse=$pdo->prepare($requete);
