@@ -22,7 +22,7 @@
 				<a href="index.php"><img src="images/logo.png" class="logo" alt="logo"></a>
 				<div class="titres_top">
 					<p class="titre">Let's Help</p>
-					<p class="sous_titre">N'est il pas temps de s'aider ?</p>
+					<p class="sous_titre">N'est-il pas temps de s'aider ?</p>
 				</div>
 				<div class="coin_utilisateur">
 					<!-- Si l'utilisateur est connecté, on affiche les infos utilisateur -->

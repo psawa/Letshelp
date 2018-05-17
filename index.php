@@ -9,7 +9,7 @@ include('entete.php'); ?>
 <p>
 	Ce site est un site d'entraide coopératif. tu peux <a href="poster_annonce1.php"> chercher / proposer de l'aide</a>, <a href="voir_annonces.php"> voir les annonces en cours </a>, et <a href="cpasmafaute.php"> trouver/poster des excuses </a>.<br/><br/>
 	Pour poster une annonce ou une excuse, tu dois être inscrit.e. En revanche, la consultation est libre. <br/><br/> 
-	Pour plus d'informations, n'hésite par à aller sur la page <a href="a_propos.php"> A propos </a>. 
+	Pour plus d'informations, n'hésites pas à aller sur la page <a href="a_propos.php"> A propos </a>. 
 </p>
 
 <?php include('pied.php') ?>
