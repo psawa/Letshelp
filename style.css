@@ -64,12 +64,14 @@ h1{
 	width: 93%;
 	min-height: 400px;
 	background-color: white;
-	margin:0 auto ;
+	margin:0 auto 8px auto ;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	background-color:#F5F5F5;
 	padding-bottom: 20px;
 	padding-top: 15px;
+	box-shadow: 0px 2px 2px 0px #e2e2e2;
+
 }
 
 .a_propos ul li,.administration ul li{
@@ -318,6 +320,8 @@ footer{
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 	background-color:#F5F5F4;
+	box-shadow: 0px 2px 2px 0px #e2e2e2;
+
 
 }
 
