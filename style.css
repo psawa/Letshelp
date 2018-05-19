@@ -444,6 +444,7 @@ select{
  	border-bottom-left-radius: 15px;
   	border-top-right-radius: 15px;
   	transition: 0.3s ease-in-out all;
+  	color: white;
  }
 
  .annonce_proposition:hover, .annonce_demande:hover{

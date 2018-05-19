@@ -49,10 +49,19 @@ include 'entete.php'; ?>
 			<?= htmlentities($ville)." (".htmlentities($num_departement).")"; ?> <br/> <br/>
 			<?= htmlentities($categorie); ?> <br/> <br/>
 			<?= htmlentities($date); ?><br/><br/>
-			<form action="contact.php" method="post">
-				<input type="hidden" name="id" value="<?= $_GET['id'] ?>" />
-				<input type="submit" value="contacter">
-			</form>
+			<?php if($enregistrements['active']==1){?>
+				<form action="contact.php" method="post">
+					<input type="hidden" name="id" value="<?= $_GET['id'] ?>" />
+					<input type="submit" value="contacter">
+				</form>
+			<?php
+			}
+			else{
+			?>
+				<p>l'annonce a été supprimmée, impossible d'en contacter l'auteur</p>
+			<?php 
+			} 
+			?>
 			<?= $nb_message." message(s)"; ?><br/><br/>
 			<?= $nb_vue." vue(s)"; ?>
 		</div>

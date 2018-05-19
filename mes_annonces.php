@@ -11,34 +11,36 @@ include 'entete.php'; ?>
 	
 <h3> Mes demandes d'aide </h3>
 	<?php
-	$requete_0="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, annonce.active, membre.pseudo FROM annonce 
-		INNER JOIN membre ON membre.id = annonce.id_membre WHERE membre.id=? AND annonce.type = 0 ORDER BY annonce.active DESC, annonce.date DESC;";
-		$reponse_0=$pdo->prepare($requete_0);
-		$reponse_0->execute(array($_SESSION['membre_id']));
-		$reponse_0->execute();
-		$enregistrements_0 = $reponse_0->fetchAll();
+	$requete_0="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, annonce.active, membre.pseudo FROM annonce
+		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.id_membre = ? AND annonce.type = 0 ORDER BY annonce.active DESC, annonce.date DESC;";
+	$reponse_0=$pdo->prepare($requete_0);
+	$reponse_0->execute(array($_SESSION['membre_id']));
+	$reponse_0->execute();
+	$enregistrements_0 = $reponse_0->fetchAll();
 	?>
 
 	<div class="toutemesdemandes">
 		<?php 
 		if(count($enregistrements_0)>0){
 			for($i=0; $i < count($enregistrements_0) ; $i++){
-				if($enregistrements_0[$i]['active']==1) {
+				if($enregistrements_0[$i]['active']==1){
 					echo '<a href="annonce.php?id='.$enregistrements_0[$i]['id'].'">';
 					echo '<div class="annonce_demande">';
 					echo htmlentities($enregistrements_0[$i]['titre']).', '.htmlentities($enregistrements_0[$i]['pseudo']).'<br/>';
 					echo '</div>';
 					echo '</a>';
 				}
-				else{
+				elseif($enregistrements_0[$i]['active']==0){
+					echo '<a href="annonce.php?id='.$enregistrements_0[$i]['id'].'">';
 					echo '<div class="annonce_desactivee">';
-					echo '<a href="annonce.php?id='.$enregistrements_0[$i]['id'].'">'.htmlentities($enregistrements_0[$i]['titre']).'</a>, '.htmlentities($enregistrements_0[$i]['pseudo']).'<br/>';
+					echo htmlentities($enregistrements_0[$i]['titre']).', '.htmlentities($enregistrements_0[$i]['pseudo']).'<br/>';
 					echo '</div>';
+					echo '</a> ';
 				}
 			}
 		}
 		else  {
-			echo "Vous n'avez pas publié de Demandes";
+			echo "<p>Vous n'avez pas publié de Demandes</p>";
 			}
 				
 		
@@ -50,11 +52,11 @@ include 'entete.php'; ?>
 <h3> Mes Propositions d'aide </h3>
 	<?php
 	$requete_1="SELECT annonce.titre, annonce.id, annonce.id_membre, annonce.type, annonce.active, membre.pseudo FROM annonce 
-		INNER JOIN membre ON membre.id = annonce.id_membre WHERE membre.id=? AND annonce.type = 1 ORDER BY annonce.active DESC, annonce.date DESC;";
-		$reponse_1=$pdo->prepare($requete_1);
-		$reponse_1->execute(array($_SESSION['membre_id']));
-		$reponse_1->execute();
-		$enregistrements_1 = $reponse_1->fetchAll();
+		INNER JOIN membre ON membre.id = annonce.id_membre WHERE annonce.id_membre = ? AND annonce.type = 1 ORDER BY annonce.active DESC, annonce.date DESC;";
+	$reponse_1=$pdo->prepare($requete_1);
+	$reponse_1->execute(array($_SESSION['membre_id']));
+	$reponse_1->execute();
+	$enregistrements_1 = $reponse_1->fetchAll();
 	?>
 
 	<div class="toutemesdemandes">
@@ -62,21 +64,23 @@ include 'entete.php'; ?>
 		if(count($enregistrements_1)>0){
 			for($i=0; $i < count($enregistrements_1) ; $i++){
 				if($enregistrements_1[$i]['active']==1) {
-					echo '<a href="annonce.php?id='.$enregistrements_0[$i]['id'].'">';
+					echo '<a href="annonce.php?id='.$enregistrements_1[$i]['id'].'">';
 					echo '<div class="annonce_proposition">';
-					echo htmlentities($enregistrements_0[$i]['titre']).', '.htmlentities($enregistrements_0[$i]['pseudo']).'<br/>';
+					echo htmlentities($enregistrements_1[$i]['titre']).', '.htmlentities($enregistrements_1[$i]['pseudo']).'<br/>';
 					echo '</div>';
 					echo '</a>';
 				}
-				else{
+				elseif($enregistrements_1[$i]['active']==0){
+					echo '<a href="annonce.php?id='.$enregistrements_1[$i]['id'].'">';
 					echo '<div class="annonce_desactivee">';
-					echo '<a href="annonce.php?id='.$enregistrements_1[$i]['id'].'">'.htmlentities($enregistrements_1[$i]['titre']).'</a>, '.htmlentities($enregistrements_1[$i]['pseudo']).'<br/>';
+					echo htmlentities($enregistrements_1[$i]['titre']).', '.htmlentities($enregistrements_1[$i]['pseudo']).'<br/>';
 					echo '</div>';
+					echo '</a> ';
 				}
 			}
 		}
 		else  {
-			echo "Vous n'avez pas publié de Propositions";
+			echo "<p>Vous n'avez pas publié de Propositions</p>";
 			}
 				
 		
