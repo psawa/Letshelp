@@ -1,5 +1,5 @@
-# Letshelp
-
+# Letshelp 
+![logo](/images/logo.png)
 ## Context
 This website is my bachelor's degree university project, part of "dynamic web sites conception" course.
 Students were asked to create a free-of-choice dynamic website using html, php, and mysql.
