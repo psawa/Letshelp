@@ -1,4 +1,4 @@
-# Letshelp 
+# Letshelp  
 ![logo](/images/logo_small.png)
 ## Context
 This website is my bachelor's degree university project, part of "dynamic web sites conception" course.
